@@ -1,0 +1,42 @@
+.OuterContainer {
+    display: flex;
+    position: relative;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: space-between;
+}
+
+.RightSide, .LeftSide {
+    width: 40%;
+    margin: 5px;
+    font-size: 1.4rem;
+    color: rgb(150, 150, 235);
+}
+
+/* .AboutUsControl {
+    color: rgba(117, 117, 182, 0.6) !important;
+    &:hover {
+        .glow {
+            background-color: transparent !important;
+            transition: none !important;
+        }
+    }
+} */
+
+/* .NavigationBarLinksBox a {
+    position: relative;
+    font-size: 2rem;
+    color: rgb(150, 150, 235);
+    text-decoration: none;
+
+    &:hover {
+        color: rgb(191, 191, 253);
+        .glow {
+            transition: all 0.3s ease;
+            background-color: rgb(99, 108, 207);
+            width: 120%;
+        }
+    }
+} */
+

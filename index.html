@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login to Amiedra</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montez&family=Niconne" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Marck+Script&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Marck+Script&family=Montez&display=swap" rel="stylesheet">
+
+    <link rel="icon" href="Aimer3beBack.png" type="image/x-icon">
+
+    <link rel="stylesheet" href="styles.css">
+    <script src="scripts.js"></script>
+    <script type="text/javascript" src="Languages.js"></script>
+</head>
+
+
+<body>
+    
+    <nav class="NavigationBar">
+        <div class="MenuLabel" onclick = "Controller(this.className)">Menu</div>
+        <div class="NavigationBarArea">
+            <div class="NavigationBarLinksBox">
+                <a class="AboutUsControl" href="#" onclick = "Controller(this.className , 'OpenPage')">About us<div class='glow'></div></a>
+                <a class="OurTeamControl" href="#" onclick = "Controller(this.className , 'ShowMsg')">Our Team<div class="glow"></div></a>
+                <a class="ServicesControl" href="#" onclick = "Controller(this.className , 'ShowMsg')">Services<div class="glow"></div></a>
+                <a class="ContactsControl" href="#" onclick = "Controller(this.className , 'ShowMsg')">Contacts<div class="glow"></div></a>
+                <a class="LoginControl" href="#" onclick = "Controller(this.className , 'OpenPage')">Login<div class="glow"></div></a>
+            </div>
+    
+            <div class="Languages">
+                <span class="LT" onclick = "Controller(this.className , 'ChangeLanguage')">LT</span>
+                <span class="RU" onclick = "Controller(this.className , 'ChangeLanguage')">RU</span>
+            </div>
+        </div>
+
+        <button class="Hamburger" onclick = "Controller(this.className)">
+            <span class="rod"></span>
+        </button>
+
+    </nav>
+
+    <div id="MsgBox"></div>
+
+    <script>
+        // LoadPartToPage('login.html', 'FirstLoad');
+        Controller('login.html', 'FirstLoad');
+    </script>
+
+    <script>
+        // LoadPartToPage('bottom.html', 'FirstLoad');
+        Controller('bottom.html', 'FirstLoad');
+    </script>
+   
+    
+</body>
+</html>

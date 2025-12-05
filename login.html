@@ -1,0 +1,26 @@
+<!-- <div class="LoginContainer"> -->
+<div class="MiddleOfPage">
+    <label class="LabelCenterTop">Login to Amiedra</label>
+
+    <div class="LoginOuterBox">
+        <div class="InputFieldsBox">
+            <input class="LoginInput" placeholder="Please enter your login or e-mail"></input>
+
+            <input class="PasswInput" placeholder="Please enter password" type='password'
+                onmousedown="Controller(this.className, 'ShowPass')" onmouseup="Controller(this.className, 'HidePass')"
+                ontouchstart="Controller(this.className, 'ShowPass')"
+                ontouchcancel="Controller(this.className, 'HidePass')">
+            </input>
+
+        </div>
+
+        <div class="LoginButtonsBox">
+            <button class="SubmitButton" type="submit" method="Post"
+                onclick="Controller(this.className , 'LoginAction')">Login</button>
+                
+            <a href="#" class="RegistrateLink" onclick="Controller(this.className , 'ShowMsg')">or register</a>
+        </div>
+    </div>
+
+</div>
+
