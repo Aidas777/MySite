@@ -621,12 +621,39 @@ body {
     position: absolute;
     width: 30%;
     bottom: 12%;
+    top: 717px;
     margin-left: 35%;
     margin-right: 35%;
     color: rgb(235, 150, 231);
     font-size: 1.2rem;
     text-align: center;
+    opacity: 1;
 
+    animation-delay: 10s;
+    animation-iteration-count: 1;
+    animation-duration: 5s;
+    animation-name: FadeIn;
+    animation-fill-mode: forwards;
+}
+
+@keyframes FadeIn {
+    0% {    
+        opacity: 1;
+        letter-spacing: normal;
+        overflow: hidden;
+        font-size: 100%;
+    }
+
+    30% {
+        opacity: 0;
+        transform: scaleX(1.1);
+        overflow: hidden;
+    }
+    100% {
+        opacity: 0;
+        letter-spacing: 300px;
+        overflow: hidden;
+    }
 }
 
 .LabelsBottomRightBox {
@@ -634,6 +661,7 @@ body {
     position: absolute;
     right: 1%;
     bottom: 1%;
+    top: 860px;
     width: 20%;
     height: 42px;
 }
@@ -662,11 +690,12 @@ body {
     bottom: 5%;
 }
 
-    .LabelsBottomLeftBox {
+.LabelsBottomLeftBox {
     display: flex;
     position: absolute;
     left: 1%;
     bottom: 0;
+    top: 875px;
     width: 20%;
     height: 36px;
     color: rgba(150, 150, 235, 0.6);

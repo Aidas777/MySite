@@ -36,6 +36,8 @@ const LabelCenterTop = document.getElementsByClassName('LabelCenterTop')[0];
 
 // let LoadedMiddlePageName;
 function LoadPartToPage(WhatToLoad, Parameters) {
+        
+    let CurrentdMiddleOfPage = WhatToLoad.replace('.html','');
 
     fetch(WhatToLoad)
         .then(response => response.text())
@@ -51,11 +53,14 @@ function LoadPartToPage(WhatToLoad, Parameters) {
 
                 } else if (Parameters == undefined) {
                     MiddleOfPageToReplace.remove();
-                    document.body.firstElementChild.insertAdjacentHTML('afterend', data);
+                    // document.body.firstElementChild.insertAdjacentHTML('afterend', data);
+                    document.getElementById('MsgBox').insertAdjacentHTML('afterend', data);
                     Controller('login.html', 'GenerateStars');
                 }
                 // ChangeNavBarElementColorWhenClicked(ControlName);
+                document.title = "Login to Amiedra";
                 AnimateLabelCenterTop();
+                document.getElementsByClassName('MiddleOfPage')[0].classList.add(CurrentdMiddleOfPage);
 
             } else if (WhatToLoad == 'bottom.html' && Parameters == 'FirstLoad') {
                 document.body.insertAdjacentHTML('beforeend', data);
@@ -65,7 +70,13 @@ function LoadPartToPage(WhatToLoad, Parameters) {
                 // const MiddleOfPageToReplace = document.getElementsByClassName('MiddleOfPage')[0];
                 // document.body.replaceChild(data, MiddleOfPageToReplace);
                 MiddleOfPageToReplace.remove();
-                document.body.firstElementChild.insertAdjacentHTML('afterend', data);
+
+                // document.body.firstElementChild.insertAdjacentHTML('afterend', data);
+                document.getElementById('MsgBox').insertAdjacentHTML('afterend', data);
+                document.getElementsByClassName('MiddleOfPage')[0].classList.add(CurrentdMiddleOfPage);
+                // document.querySelector('link[href="style_"' + CurrentdMiddleOfPage + '".css"]').href = "style_" + CurrentdMiddleOfPage + ".css?v=" + Date.now();
+                document.title = 'Amiedra ' + (WhatToLoad.includes('aboutus') ? '- About Us' : '');
+                // LoadedMiddlePageName = WhatToLoad;
             }
 
         })
@@ -101,13 +112,18 @@ function Controller(ControlName, ActionName) {
         LoadPartToPage('aboutus.html');
         ChangeNavBarElementColorWhenClicked(ControlName);
 
-    } else if (ControlName != 'LoginControl' && ActionName == 'ShowMsg') {
-        ShowMsg(GetTranslationsArrayByCurrentLanguage()['MsgTexts']['ForDevelopment'], ColorRed);
-        
     } else if (ControlName == 'LoginControl' && ActionName == 'OpenPage') {
         // ShowMsg(GetTranslationsArrayByCurrentLanguage()['MsgTexts']['AlreadyOnLoginPage'], ColorRed);
         LoadPartToPage('login.html');
         ChangeNavBarElementColorWhenClicked(ControlName);
+        
+    } else if (ControlName == 'OurTeamControl' && ActionName == 'OpenPage') {
+        // ShowMsg(GetTranslationsArrayByCurrentLanguage()['MsgTexts']['AlreadyOnLoginPage'], ColorRed);
+        LoadPartToPage('ourteam.html');
+        ChangeNavBarElementColorWhenClicked(ControlName);
+
+    } else if (ControlName != 'LoginControl' && ActionName == 'ShowMsg') {
+        ShowMsg(GetTranslationsArrayByCurrentLanguage()['LoginPage']['MsgTexts']['ForDevelopment'], ColorRed);
 
     } else if (ControlName == 'SubmitButton' && ActionName == 'LoginAction') {
         LoginAction();
@@ -403,22 +419,24 @@ function LoginAction()
     let MsgTemp;
     const BtnSubmitObject = document.getElementsByClassName("SubmitButton")[0];
 
+    let MiddleOfPage = 'LoginPage';
+
     if (AreLoginAndPassAccepted() == "yes") {
 
-        MsgTemp = GetTranslationsArrayByCurrentLanguage()['Titles']['SubmitButtonLogedIn'];
+        MsgTemp = GetTranslationsArrayByCurrentLanguage()['MiddleOfPage']['Titles']['SubmitButtonLogedIn'];
         ShowMsg(MsgTemp, ColorGreen);
         BtnSubmitObject.innerHTML = MsgTemp;
 
     } else if (AreLoginAndPassAccepted() == "no") {
-        MsgTemp = GetTranslationsArrayByCurrentLanguage()['MsgTexts']['LoginOrPassTooShort'];
+        MsgTemp = GetTranslationsArrayByCurrentLanguage()['MiddleOfPage']['MsgTexts']['LoginOrPassTooShort'];
         ShowMsg(MsgTemp, ColorRed);
-        BtnSubmitObject.innerHTML = GetTranslationsArrayByCurrentLanguage()['Titles']['SubmitButton'];
+        BtnSubmitObject.innerHTML = GetTranslationsArrayByCurrentLanguage()['MiddleOfPage']['Titles']['SubmitButton'];
 
     } else {    
 
-        MsgTemp = GetTranslationsArrayByCurrentLanguage()['MsgTexts']['EnterLoginAndPass'];
+        MsgTemp = GetTranslationsArrayByCurrentLanguage()['MiddleOfPage']['MsgTexts']['EnterLoginAndPass'];
         ShowMsg(MsgTemp, ColorRed);
-        BtnSubmitObject.innerHTML = GetTranslationsArrayByCurrentLanguage()['Titles']['SubmitButton'];
+        BtnSubmitObject.innerHTML = GetTranslationsArrayByCurrentLanguage()['MiddleOfPage']['Titles']['SubmitButton'];
     }
 }
 
