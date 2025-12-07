@@ -32,8 +32,8 @@
 }
 
 .CenterMiddle {
-    width: 100%;
-    height: 180px;
+    width: 90%;
+    height: 140px;
     display: flex;
     flex-wrap: wrap;
     flex-flow: row;
@@ -41,31 +41,33 @@
 }
 
 .RightSide, .LeftSide {
-    margin: 0 15px;
-
     display: flex;
     color: rgb(150, 150, 235);
 }
 
 .LeftSide {
+    margin: 0 15px;
     width: 70%;
     font-size: 1.4rem;
+    place-content: space-evenly;
 }
 
 .RightSide {
-    width: 30%;
+    /* margin-right: 10px; */
+    margin-left: 20px;
+    width: 30%; 
     font-size: 1.4rem;
 }
 
 .LeftSideLeft, .LeftSideCenter, .LeftSideRight {
     margin: 0;
-    padding-left: 40px;
+    padding-left: 20px;
 }
 
 .CenterBottom {
     margin-left: auto;
     margin-right: auto;
-    width: 100%;
+    width: 90%;
     height: 70px;
     top: 45px;
     display: flex;
@@ -118,6 +120,7 @@
     .CenterMiddle {
         height: 100px;
         flex-flow: column;
+        place-self: center;
     }
 
     .LeftSide {
@@ -141,6 +144,7 @@
 
     .CenterBottom {
         top: 0px;
+        margin-top: 10px;
         font-size: 0.8rem;
     }
 
