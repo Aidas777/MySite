@@ -80,7 +80,10 @@ function LoadPartToPage(WhatToLoad, Parameters) {
                 // LoadedMiddlePageName = WhatToLoad;
                 AnimateLabelCenterTop();
             }
-            document.title = GetPageTitle(WhatToLoad);
+            
+            if (!WhatToLoad.includes('bottom')) {
+                document.title = GetPageTitle(WhatToLoad);
+            }
 
         })
         .catch(error => console.error('Error loading ' + WhatToLoad + ', something is wrong, GREICIAUISIAI REIKIA LEISTI PER SERVERI:', error));
