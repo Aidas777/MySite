@@ -629,11 +629,11 @@ body {
     text-align: center;
     opacity: 1;
 
+    /* animation-name: FadeIn;
     animation-delay: 10s;
     animation-iteration-count: 1;
     animation-duration: 5s;
-    animation-name: FadeIn;
-    animation-fill-mode: forwards;
+    animation-fill-mode: forwards; */
 }
 
 @keyframes FadeIn {
@@ -1203,7 +1203,7 @@ body {
     .DemoLabelBottom {
         width: 80%;
         bottom: unset;
-        top: 55%;
+        top: 380px;
         margin-left: 10%;
         margin-right: 10%;
     }
@@ -1217,7 +1217,7 @@ body {
     }
 
     .LabelsBottomRightBox {
-        top: 69%;
+        top: 455px;
         height: 26px;
     }
 
@@ -1251,7 +1251,7 @@ body {
 
     .DemoLabelBottom {
         font-size: 0.8rem;
-        top: 55%;
+        top: 380px;
     }
 
     .LabelsBottomRightBox {
@@ -1260,7 +1260,7 @@ body {
 
     .LabelsBottomLeftBox {
         height: 28px;
-        top: 76%;
+        top: 490px;
         font-size: 0.6rem;
     }
 }
