@@ -44,7 +44,7 @@ function LoadPartToPage(WhatToLoad, Parameters) {
         .then(response => response.text())
         .then(data => {
 
-            const MiddleOfPageToReplace = document.getElementsByClassName('MiddleOfPage')[0];
+            const MiddleOfPageToReplace = document.querySelector('.MiddleOfPage');
 
             if (WhatToLoad == 'login.html') {
 
@@ -59,9 +59,9 @@ function LoadPartToPage(WhatToLoad, Parameters) {
                     Controller('login.html', 'GenerateStars');
                 }
                 // ChangeNavBarElementColorWhenClicked(ControlName);
-                document.title = "Login to Amiedra";
+                // document.title = "Login to Amiedra";
                 AnimateLabelCenterTop();
-                document.getElementsByClassName('MiddleOfPage')[0].classList.add(CurrentdMiddleOfPage);
+                document.querySelector('.MiddleOfPage').classList.add(CurrentdMiddleOfPage);
 
             } else if (WhatToLoad == 'bottom.html' && Parameters == 'FirstLoad') {
                 document.body.insertAdjacentHTML('beforeend', data);
@@ -74,25 +74,40 @@ function LoadPartToPage(WhatToLoad, Parameters) {
 
                 // document.body.firstElementChild.insertAdjacentHTML('afterend', data);
                 document.getElementById('MsgBox').insertAdjacentHTML('afterend', data);
-                document.getElementsByClassName('MiddleOfPage')[0].classList.add(CurrentdMiddleOfPage);
+                document.querySelector('.MiddleOfPage').classList.add(CurrentdMiddleOfPage);
                 // document.querySelector('link[href="style_"' + CurrentdMiddleOfPage + '".css"]').href = "style_" + CurrentdMiddleOfPage + ".css?v=" + Date.now();
-                document.title = 'Amiedra ' + (WhatToLoad.includes('aboutus') ? '- About Us' : '');
+
                 // LoadedMiddlePageName = WhatToLoad;
                 AnimateLabelCenterTop();
             }
+            document.title = GetPageTitle(WhatToLoad);
 
         })
         .catch(error => console.error('Error loading ' + WhatToLoad + ', something is wrong, GREICIAUISIAI REIKIA LEISTI PER SERVERI:', error));
 }
 
+function GetPageTitle(WhatToLoad) {
+    if (WhatToLoad.includes('aboutus')) {
+        WhatToLoad = 'About Us';
+    } else if (WhatToLoad.includes('ourteam')) {
+        WhatToLoad = 'Our Team';
+    } else if (WhatToLoad.includes('contacts')) {
+        WhatToLoad = 'Contacts';
+    } else if (WhatToLoad.includes('login')) {
+        WhatToLoad = 'Login';
+    }
+
+    return 'Amiedra - ' + WhatToLoad;
+}
+
 /// CONTROLLER /// /// CONTROLLER ////// CONTROLLER ////// CONTROLLER ////// CONTROLLER ////// CONTROLLER ////// CONTROLLER ////// CONTROLLER ////// CONTROLLER ////// CONTROLLER ////// CONTROLLER ///
 function Controller(ControlName, ActionName) {
 
-    const NavigationBarAreaObject  = document.getElementsByClassName('NavigationBarArea')[0];
-    const LabelCenterTopObject = document.getElementsByClassName('LabelCenterTop')[0];
-    const HamburgerControl = document.getElementsByClassName('Hamburger')[0];
-    const MenuLabelObject = document.getElementsByClassName('MenuLabel')[0];
-    const PasswInputObject = document.getElementsByClassName("PasswInput")[0];
+    const NavigationBarAreaObject  = document.querySelector('.NavigationBarArea');
+    const LabelCenterTopObject = document.querySelector('.LabelCenterTop');
+    const HamburgerControl = document.querySelector('.Hamburger');
+    const MenuLabelObject = document.querySelector('.MenuLabel');
+    const PasswInputObject = document.querySelector('.PasswInput');
 
     // const DemoLabelBottomObject = document.getElementsByClassName('DemoLabelBottom')[0];
     // const NavigationBarObject = document.getElementsByClassName('NavigationBar')[0];
@@ -122,6 +137,13 @@ function Controller(ControlName, ActionName) {
     } else if (ControlName == 'OurTeamControl' && ActionName == 'OpenPage') {
         // ShowMsg(GetTranslationsArrayByCurrentLanguage()['MsgTexts']['AlreadyOnLoginPage'], ColorRed);
         LoadPartToPage('ourteam.html');
+        ChangeNavBarElementColorWhenClicked(ControlName);
+
+
+
+    } else if (ControlName == 'ContactsControl' && ActionName == 'OpenPage') {
+        // ShowMsg(GetTranslationsArrayByCurrentLanguage()['MsgTexts']['AlreadyOnLoginPage'], ColorRed);
+        LoadPartToPage('contacts.html');
         ChangeNavBarElementColorWhenClicked(ControlName);
 
     } else if (ControlName != 'LoginControl' && ActionName == 'ShowMsg') {
@@ -188,10 +210,10 @@ function ShowLabelBottomRightCreator() {
 
 function GenerateStars(StarsQty) {
 
-    const LoginInputObject = document.getElementsByClassName("LoginInput")[0];
-    const InputFieldsBoxObject = document.getElementsByClassName('InputFieldsBox')[0];
-    const PasswInputObject = document.getElementsByClassName("PasswInput")[0];
-    const LoginOuterBoxObject = document.getElementsByClassName('LoginOuterBox')[0];
+    const LoginInputObject = document.querySelector(".LoginInput");
+    const InputFieldsBoxObject = document.querySelector('.InputFieldsBox');
+    const PasswInputObject = document.querySelector(".PasswInput");
+    const LoginOuterBoxObject = document.querySelector('.LoginOuterBox');
 
     const UnitsPx = "px";
     
