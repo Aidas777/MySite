@@ -50,14 +50,16 @@ function LoadPartToPage(WhatToLoad, Parameters) {
 
                 if (Parameters == 'FirstLoad') {
                     document.body.insertAdjacentHTML('beforeend', data);
-                    Controller('login.html', 'GenerateStars');
+                    // Controller('login.html', 'GenerateStars');
 
                 } else if (Parameters == undefined) {
                     MiddleOfPageToReplace.remove();
                     // document.body.firstElementChild.insertAdjacentHTML('afterend', data);
                     document.getElementById('MsgBox').insertAdjacentHTML('afterend', data);
-                    Controller('login.html', 'GenerateStars');
+                    // Controller('login.html', 'GenerateStars');
                 }
+
+                Controller('login.html', 'GenerateStars');
                 // ChangeNavBarElementColorWhenClicked(ControlName);
                 // document.title = "Login to Amiedra";
                 AnimateLabelCenterTop();
@@ -80,7 +82,7 @@ function LoadPartToPage(WhatToLoad, Parameters) {
                 // LoadedMiddlePageName = WhatToLoad;
                 AnimateLabelCenterTop();
             }
-            
+
             if (!WhatToLoad.includes('bottom')) {
                 document.title = GetPageTitle(WhatToLoad);
             }
@@ -89,19 +91,6 @@ function LoadPartToPage(WhatToLoad, Parameters) {
         .catch(error => console.error('Error loading ' + WhatToLoad + ', something is wrong, GREICIAUISIAI REIKIA LEISTI PER SERVERI:', error));
 }
 
-function GetPageTitle(WhatToLoad) {
-    if (WhatToLoad.includes('aboutus')) {
-        WhatToLoad = 'About Us';
-    } else if (WhatToLoad.includes('ourteam')) {
-        WhatToLoad = 'Our Team';
-    } else if (WhatToLoad.includes('contacts')) {
-        WhatToLoad = 'Contacts';
-    } else if (WhatToLoad.includes('login')) {
-        WhatToLoad = 'Login';
-    }
-
-    return 'Amiedra - ' + WhatToLoad;
-}
 
 /// CONTROLLER /// /// CONTROLLER ////// CONTROLLER ////// CONTROLLER ////// CONTROLLER ////// CONTROLLER ////// CONTROLLER ////// CONTROLLER ////// CONTROLLER ////// CONTROLLER ////// CONTROLLER ///
 function Controller(ControlName, ActionName) {
@@ -203,14 +192,29 @@ function Controller(ControlName, ActionName) {
 }
 
 
-//REFRESH BOTTOM LABEL DATE IF CODE AT THE END IS ACTVATED (OTHERWISE DATE IS NOT DISPLAYED)
-function ShowLabelBottomRightCreator() {
+function GetPageTitle(WhatToLoad) {
+    if (WhatToLoad.includes('aboutus')) {
+        WhatToLoad = 'About Us';
+    } else if (WhatToLoad.includes('ourteam')) {
+        WhatToLoad = 'Our Team';
+    } else if (WhatToLoad.includes('contacts')) {
+        WhatToLoad = 'Contacts';
+    } else if (WhatToLoad.includes('login')) {
+        WhatToLoad = 'Login';
+    }
 
-    document.getElementsByClassName('LabelBottomRightCreator')[0]
-    .innerHTML = "Created by Aidas (amiedra@gmail.com)"; /*+ new Date().getFullYear();*/
+    return 'Amiedra - ' + WhatToLoad;
 }
 
 
+// REFRESH BOTTOM LABEL DATE IF CODE AT THE END IS ACTVATED (OTHERWISE DATE IS NOT DISPLAYED)
+function ShowLabelBottomRightCreator() {
+
+    document.querySelector('.LabelBottomRightCreator')
+    .innerHTML = "Created by Aidas (amiedra@gmail.com)"; /*+ new Date().getFullYear();*/
+}
+
+// STARS GENERATOR
 function GenerateStars(StarsQty) {
 
     const LoginInputObject = document.querySelector(".LoginInput");

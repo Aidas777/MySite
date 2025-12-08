@@ -1212,7 +1212,7 @@ body {
     }
 
     .LabelsBottomRightBox {
-        top: 455px;
+        top: 465px;
         height: 26px;
     }
 
@@ -1256,7 +1256,7 @@ body {
 
     .LabelsBottomLeftBox {
         height: 28px;
-        top: 490px;
+        top: 497px;
         font-size: 0.6rem;
     }
 }
