@@ -87,6 +87,16 @@ function LoadPartToPage(WhatToLoad, Parameters) {
                 document.title = GetPageTitle(WhatToLoad);
             }
 
+            ////////////////////////////////
+            // if (CurrentdMiddleOfPage.includes('aboutus')) { ATJUNGIU. JEI NEBEREIKES, TAI GAL IR FUNKCIJA ZEMIAU PANAIKINK
+            //     GenerateStarsWithoutInnerHoles(CurrentdMiddleOfPage, '.CenterBottom', 200);
+            // }
+            ////////////////////////////////
+
+            if (CurrentdMiddleOfPage.includes('aboutus')) {
+                AnimateBlinkWaveLetters(CurrentdMiddleOfPage, '.CenterBottom');
+            }
+
         })
         .catch(error => console.error('Error loading ' + WhatToLoad + ', something is wrong, GREICIAUISIAI REIKIA LEISTI PER SERVERI:', error));
 }
@@ -206,6 +216,23 @@ function GetPageTitle(WhatToLoad) {
     return 'Amiedra - ' + WhatToLoad;
 }
 
+ function AnimateBlinkWaveLetters(CurrentdMiddleOfPage, OnElement) {
+
+    const ElementForAnimation = document.querySelector(OnElement);
+    if (!ElementForAnimation) return;
+
+    const ElementForAnimationText = ElementForAnimation.innerHTML.trim();
+    ElementForAnimation.innerHTML = '';
+
+    for (let index = 0; index < ElementForAnimationText.length; index++) {
+        const Span = document.createElement('span');
+
+        Span.innerHTML = (ElementForAnimationText[index] == ' ' ? '\u00A0' : ElementForAnimationText[index]);
+        Span.style.animationDelay = (index * 0.01) + 's';
+        ElementForAnimation.appendChild(Span);
+    }
+ }  
+
 
 // REFRESH BOTTOM LABEL DATE IF CODE AT THE END IS ACTVATED (OTHERWISE DATE IS NOT DISPLAYED)
 function ShowLabelBottomRightCreator() {
@@ -260,7 +287,7 @@ function GenerateStars(StarsQty) {
         && ((RandX < (PasswInputObject.offsetLeft ))
         || (RandY < (PasswInputObject.offsetTop)) 
         || (RandX > (PasswInputObject.offsetLeft + PasswInputObject.offsetWidth))
-        || (RandY > (PasswInputObject.offsetTop + PasswInputObject.offsetHeight + InputFieldsBoxObject.offsetTop))) 
+        || (RandY > (PasswInputObject.offsetTop + PasswInputObject.offsetHeight + PasswInputObject.offsetTop))) 
         )
         {
             LoginOuterBoxObject.appendChild(StarPoints);
@@ -268,14 +295,65 @@ function GenerateStars(StarsQty) {
     }
 }
 
+function GenerateStarsWithoutInnerHoles(MiddleOfPage, OnElement, StarsQty) { //KOLKAS ATJUNGIU (TAIP IR NEAISKU KAIP GAUTA TA SKAICIU 1028)
+
+    const ElementForStars = document.querySelector(OnElement);
+    // let ElementForStarsBoxSize = ElementForStars.getBoundingClientRect();
+    // console.log(ElementForStarsBoxSize);
+    console.log('ElementForStars.offsetLeft: ' + ElementForStars.offsetLeft + ' /// ElementForStars.offsetCW: ' + ElementForStars.clientWidth);
+    console.log(getComputedStyle(ElementForStars));
+    
+    const UnitsPx = "px";
+    
+    for (i = 0; i <= StarsQty; i++) {
+
+        
+        
+        let RandX = ElementForStars.offsetWidth * Math.random();
+        let RandY = ElementForStars.offsetHeight * Math.random();
+
+        StarPoints = document.createElement("div");
+        StarPoints.className = "StarPoints";
+        StarPoints.style.position = "absolute";
+
+        let PointRadius;
+        if (window.innerWidth > 500) {
+            PointRadius= Math.random() * 3;
+        } else {
+            PointRadius = Math.random();
+        }
+
+        StarPoints.style.height = PointRadius + UnitsPx;
+        StarPoints.style.width = PointRadius + UnitsPx;
+        StarPoints.style.backgroundColor = "white";
+
+        StarPoints.style.left = RandX + UnitsPx;
+        StarPoints.style.top = RandY + UnitsPx;
+
+        // console.log('ElementForStars: ' + ElementForStars.className +' /// offsetLeft: ' + ElementForStars.offsetLeft + ' // offsetWidth: ' + ElementForStars.innerWidth);
+        
+        
+
+        if 
+        ((RandX > ElementForStars.offsetLeft) && (RandX < (1028))
+        // &&
+        // ((RandY > ElementForStars.offsetTop) && (RandY < (170)))
+        )
+            {
+            ElementForStars.appendChild(StarPoints);
+        }
+    }
+    
+} 
+
 
 //HAMBURGER ON CLICK
 function OpenHamburgerMenu() {
 
-    const HamburgerControl = document.getElementsByClassName('Hamburger')[0];
-    const NavigationBarAreaObject  = document.getElementsByClassName('NavigationBarArea')[0];
-    const LabelCenterTopObject = document.getElementsByClassName('LabelCenterTop')[0];
-    const MenuLabelObject = document.getElementsByClassName('MenuLabel')[0];
+    const HamburgerControl = document.querySelector('.Hamburger');
+    const NavigationBarAreaObject  = document.querySelector('.NavigationBarArea');
+    const LabelCenterTopObject = document.querySelector('.LabelCenterTop');
+    const MenuLabelObject = document.querySelector('.MenuLabel');
 
     // const DemoLabelBottomObject = document.getElementsByClassName('DemoLabelBottom')[0];
 
@@ -325,6 +403,7 @@ function SwitchLanguageLetters(ControlName) {
 }
 
 
+// LANGUAGE CHANGE BY CURRENT LANGUAGE
 function ChangeLanguageByCurrent() {
 
     let MiddleOfPage = 'LoginPage';
@@ -338,7 +417,7 @@ function ChangeLanguageByCurrent() {
 
     for (const [key, value] of Object.entries(TitlesArrayByCurrentLanguage)) {
 
-        if (!key.toLocaleLowerCase().includes('logedin')) {
+        if (!key.toLocaleLowerCase().includes('logedin')) { // skipping the line in Languages.js "SubmitButtonLogedIn" : "Prisijungta"
             
             ObjectForLanguageChange = document.getElementsByClassName(key)[0];
 
@@ -374,47 +453,6 @@ function ChangeLanguageByCurrent() {
     }
 
     AnimateLabelCenterTop();
-
-    // // const AdditionalDivForGlowEffect = "<div class='glow'>";
-    // // let TitlesArrayByCurrentLanguage = GetTranslationsArrayByCurrentLanguage()['LoginPage']['Titles'];
-
-    // const MenuLabelObject = document.getElementsByClassName('MenuLabel')[0];
-
-    // const AboutUsControl = document.getElementsByClassName('AboutUsControl')[0];
-    // const OurTeamControl = document.getElementsByClassName('OurTeamControl')[0];
-    // const ServicesControl = document.getElementsByClassName('ServicesControl')[0];
-    // const ContactsControl = document.getElementsByClassName('ContactsControl')[0];
-    // const LoginControl = document.getElementsByClassName('LoginControl')[0];
-
-    // const LabelCenterTopObject = document.getElementsByClassName('LabelCenterTop')[0];
-
-    // // INPUT FIELDS
-    // const LoginInputField = document.getElementsByClassName('LoginInput')[0];
-    // const PasswInputField = document.getElementsByClassName('PasswInput')[0];
-
-    // //BUTTONS
-    // const SubmitButton = document.getElementsByClassName('SubmitButton')[0];
-    // const RegistrateLink = document.getElementsByClassName('RegistrateLink')[0];
-
-    
-    // LabelCenterTopObject.innerHTML = TitlesArrayByCurrentLanguage['LabelCenterTop'];
-    // LabelCenterTopObject.style.fontFamily = TitlesArrayByCurrentLanguage['LabelCenterTopFont'];
-
-    // MenuLabelObject.innerHTML = TitlesArrayByCurrentLanguage['MenuLabel'] + AdditionalDivForGlowEffect;
-
-    // AboutUsControl.innerHTML = TitlesArrayByCurrentLanguage['AboutUsControl'] + AdditionalDivForGlowEffect;
-    // OurTeamControl.innerHTML = TitlesArrayByCurrentLanguage['OurTeamControl'] + AdditionalDivForGlowEffect;
-    // ServicesControl.innerHTML = TitlesArrayByCurrentLanguage['ServicesControl'] + AdditionalDivForGlowEffect;
-    // ContactsControl.innerHTML = TitlesArrayByCurrentLanguage['ContactsControl'] + AdditionalDivForGlowEffect;
-    // LoginControl.innerHTML = TitlesArrayByCurrentLanguage['LoginControl'] + AdditionalDivForGlowEffect;
-
-    // LoginInputField.placeholder = TitlesArrayByCurrentLanguage['LoginInputPlaceHolder'];
-    // PasswInputField.placeholder = TitlesArrayByCurrentLanguage['PasswInputPlaceHolder'];
-
-    // SubmitButton.innerHTML = TitlesArrayByCurrentLanguage['SubmitButton'];
-    // RegistrateLink.innerHTML = TitlesArrayByCurrentLanguage['RegistrateLink'];
-
-    // window.onload();
     
 }
 
