@@ -91,12 +91,13 @@
     text-align: justify;
     align-items: center;
     flex-wrap: wrap;
+    /* text-shadow: 0 0 10px rgb(150, 150, 235); */
 
     overflow: hidden;
 
     span {
         animation-name: BlinkLetters;
-        animation-duration: 2s;
+        animation-duration: 4s;
         animation-direction: alternate-reverse;
         animation-iteration-count: infinite;
     }
@@ -117,13 +118,18 @@
 
         /* font-size: 1.4rem; */
     }
-    100% {
+    50% {
         /* color: rgb(226, 226, 255); */
         /* color: rgb(226, 226, 255); */
         /* letter-spacing:  1.2px; */
         color: rgb(15, 16, 27);
         /* transform: translateY(-6px); */
         /* font-size: 1.41rem; */
+        filter: blur(10px);
+        
+    }
+    100% {
+        color: rgb(150, 150, 235);
     }
     
 }
