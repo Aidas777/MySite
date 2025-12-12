@@ -621,14 +621,14 @@ body {
     text-align: center;
     opacity: 1;
 
-    animation-name: DemoFadeIn;
+    animation-name: DemoBlow;
     animation-delay: 10s;
     animation-iteration-count: 1;
     animation-duration: 5s;
     animation-fill-mode: forwards;
 }
 
-@keyframes DemoFadeIn {
+@keyframes DemoBlow {
     0% {    
         opacity: 1;
         letter-spacing: normal;
@@ -641,10 +641,12 @@ body {
         transform: scaleX(1.1);
         overflow: hidden;
     }
+
     100% {
         opacity: 0;
         letter-spacing: 300px;
         overflow: hidden;
+        
     }
 }
 
@@ -1249,6 +1251,7 @@ body {
         height: 65px;
         top: 380px;
     }
+    
 
     .LabelsBottomRightBox {
         height: 22px;
