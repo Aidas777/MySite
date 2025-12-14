@@ -241,8 +241,8 @@
             color: rgb(255, 255, 255);
             /* transform: scaleX(5); */
 
-            /* animation-name: BlinkOneLetter; */
-            animation-name: none;
+            animation-name: BlinkOneLetter;
+            /* animation-name: none; */
             /* font-weight: 700; */
             /* animation-duration: 0.05s; */
             /* animation-direction: alternate-reverse; */

@@ -608,6 +608,20 @@ function ShowMsg(Msg, MsgColor) {
     }, 5100)
 }
 
+function CopyTxt(CopyFromElement, Parameters) {
+    
+    let text = '';
+
+    if (Parameters) {
+        text = document.querySelectorAll('.' + CopyFromElement)[Parameters].innerText;
+    } else {
+        text = document.querySelectorAll('.' + CopyFromElement).innerText;
+    }
+    text = text.replace('Copy', '').trim();
+    navigator.clipboard.writeText(text);
+
+}
+
 
 //MESSAGE COLORS
 const ColorGreen = {
