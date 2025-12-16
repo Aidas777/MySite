@@ -20,20 +20,25 @@
     margin-top: 10px;
     margin-bottom: 10px;
     width: 100%;
-    height: 120px;
+    /* height: 120px; */
     display: flex;
     position: relative;
 
     font-size: 2.4rem;
     color: rgb(150, 150, 235);
-    justify-content: center;
-    place-items: center;
+    /* justify-content: center;
+    place-items: center; */
+    text-align: center;
 
-    /* p {
-        b {
+    display: flex;
+    flex-wrap: wrap;
+
+    p {
+        width: 100%;
+        /* b {
             font-size: 2rem;
-        }
-    } */
+        } */
+    }
 }
 
 .CenterMiddleOT {

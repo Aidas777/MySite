@@ -146,18 +146,23 @@ function Controller(ControlName, ActionName) {
         LoadPartToPage('ourteam.html');
         ChangeNavBarElementColorWhenClicked(ControlName);
 
-
-
     } else if (ControlName == 'ContactsControl' && ActionName == 'OpenPage') {
         // ShowMsg(GetTranslationsArrayByCurrentLanguage()['MsgTexts']['AlreadyOnLoginPage'], ColorRed);
         LoadPartToPage('contacts.html');
         ChangeNavBarElementColorWhenClicked(ControlName);
 
+        
+    } else if (ControlName == 'ServicesControl' && ActionName == 'OpenPage') {
+        // ShowMsg(GetTranslationsArrayByCurrentLanguage()['MsgTexts']['AlreadyOnLoginPage'], ColorRed);
+        LoadPartToPage('services.html');
+        ChangeNavBarElementColorWhenClicked(ControlName);
+
+
     } else if (ControlName != 'LoginControl' && ActionName == 'ShowMsg') {
         ShowMsg(GetTranslationsArrayByCurrentLanguage()['LoginPage']['MsgTexts']['ForDevelopment'], ColorRed);
 
     } else if (ControlName == 'SubmitButton' && ActionName == 'LoginAction') {
-        LoginAction();
+        LoginAction('LoginPage');
 
     } else if (ControlName == 'PasswInput' && ActionName == 'ShowPass') {
             PasswInputObject.type = 'text';
@@ -181,19 +186,17 @@ function Controller(ControlName, ActionName) {
         SwitchLanguageLetters(ControlName);
         ChangeLanguageByCurrent();
         MsgBoxObject.style.display = "none";
+    } else if (ActionName == 'CopyTxt') {
+        console.log(ControlName, ActionName);
+        // ShowMsg(GetTranslationsArrayByCurrentLanguage()['LoginPage']['MsgTexts']['ForDevelopment'], ColorGreen);
+        ShowMsg(CopyTxt(ControlName), ColorGreen);
+        
     }
 
     
     // AFTER CLICK ON HAMBURGER MENU ITEM WE CLOSE HAMBURGER MENU IF IT WAS OPEN
     if ((NavigationBarAreaObject.className == 'NavigationBarArea active') && (ControlName != 'LT' && ControlName != 'RU' && ControlName != 'EN')) {
         NavigationBarAreaObject.classList.remove('active');
-    }
-
-   if (LabelCenterTopObject != undefined) {
-    
-        if (LabelCenterTopObject.className == 'LabelCenterTop active') {
-            LabelCenterTopObject.classList.remove('active');
-        }
     }
 
     //HAMBURGER OPEN MENU
@@ -203,6 +206,13 @@ function Controller(ControlName, ActionName) {
         HamburgerControl.classList.remove('active');
         MenuLabelObject.classList.remove('active');
         // DemoLabelBottomObject.style.filter = 'none';
+    }
+
+    if (LabelCenterTopObject != undefined) {
+    
+        if (LabelCenterTopObject.className == 'LabelCenterTop active') {
+            LabelCenterTopObject.classList.remove('active');
+        }
     }
 }
 
@@ -335,6 +345,10 @@ function GenerateStars(StarsQty) {
         || (RandX > (PasswInputObject.offsetLeft + PasswInputObject.offsetWidth))
         || (RandY > (PasswInputObject.offsetTop + PasswInputObject.offsetHeight + InputFieldsBoxObject.offsetTop))) 
         )
+        {
+            LoginOuterBoxObject.appendChild(StarPoints);
+        }
+
         {
             LoginOuterBoxObject.appendChild(StarPoints);
         }
@@ -529,29 +543,29 @@ function GetTranslationsArrayByCurrentLanguage() {
 
 
 //LOGIN BUTTONS ACTIONS
-function LoginAction() 
+function LoginAction(CurrentPage) 
 { 
     let MsgTemp;
     const BtnSubmitObject = document.getElementsByClassName("SubmitButton")[0];
 
-    let MiddleOfPage = 'LoginPage';
+    let MiddleOfPage = CurrentPage;
 
     if (AreLoginAndPassAccepted() == "yes") {
 
-        MsgTemp = GetTranslationsArrayByCurrentLanguage()['MiddleOfPage']['Titles']['SubmitButtonLogedIn'];
+        MsgTemp = GetTranslationsArrayByCurrentLanguage()[MiddleOfPage]['Titles']['SubmitButtonLogedIn'];
         ShowMsg(MsgTemp, ColorGreen);
         BtnSubmitObject.innerHTML = MsgTemp;
 
     } else if (AreLoginAndPassAccepted() == "no") {
-        MsgTemp = GetTranslationsArrayByCurrentLanguage()['MiddleOfPage']['MsgTexts']['LoginOrPassTooShort'];
+        MsgTemp = GetTranslationsArrayByCurrentLanguage()[MiddleOfPage]['MsgTexts']['LoginOrPassTooShort'];
         ShowMsg(MsgTemp, ColorRed);
-        BtnSubmitObject.innerHTML = GetTranslationsArrayByCurrentLanguage()['MiddleOfPage']['Titles']['SubmitButton'];
+        BtnSubmitObject.innerHTML = GetTranslationsArrayByCurrentLanguage()[MiddleOfPage]['Titles']['SubmitButton'];
 
     } else {    
 
-        MsgTemp = GetTranslationsArrayByCurrentLanguage()['MiddleOfPage']['MsgTexts']['EnterLoginAndPass'];
+        MsgTemp = GetTranslationsArrayByCurrentLanguage()[MiddleOfPage]['MsgTexts']['EnterLoginAndPass'];
         ShowMsg(MsgTemp, ColorRed);
-        BtnSubmitObject.innerHTML = GetTranslationsArrayByCurrentLanguage()['MiddleOfPage']['Titles']['SubmitButton'];
+        BtnSubmitObject.innerHTML = GetTranslationsArrayByCurrentLanguage()[MiddleOfPage]['Titles']['SubmitButton'];
     }
 }
 
@@ -608,17 +622,31 @@ function ShowMsg(Msg, MsgColor) {
     }, 5100)
 }
 
-function CopyTxt(CopyFromElement, Parameters) {
+function CopyTxt(CopyFromElement) {
     
     let text = '';
+    let ElementSequenceNr;
+    let StringPositionNr;
 
-    if (Parameters) {
-        text = document.querySelectorAll('.' + CopyFromElement)[Parameters].innerText;
+    // IF WE HAVE FOR EXAMPLE A CLASS AND WE WANT TO TAKE NTH ELEMENT BY IT THEN WE CAN PROVIDE NTH SEQUENCE NUMBER AFTER '&&&'
+    if (CopyFromElement.includes('&&&')) {
+        StringPositionNr = CopyFromElement.indexOf('&&&');
+        ElementSequenceNr = CopyFromElement.substring(StringPositionNr);
+        ElementSequenceNr = ElementSequenceNr.replace('&&&','');
+        // console.log(ElementSequenceNr);
+        
+        CopyFromElement = CopyFromElement.replace(('&&&' + ElementSequenceNr), '');
+    }
+
+    if (ElementSequenceNr) {
+        text = document.querySelectorAll('.' + CopyFromElement)[ElementSequenceNr].innerText;
     } else {
         text = document.querySelectorAll('.' + CopyFromElement).innerText;
     }
     text = text.replace('Copy', '').trim();
     navigator.clipboard.writeText(text);
+
+    return ("'" + text + "' copied to clipboard");
 
 }
 

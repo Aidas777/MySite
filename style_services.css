@@ -1,4 +1,8 @@
-.OuterLowerContainerCO {
+.MiddleOfPage.services {
+    margin-top: 35px;
+}
+
+.OuterLowerContainerSR {
     display: flex;
     position: relative;
     width: 80%;
@@ -10,15 +14,16 @@
     flex-flow: column;
 }
 
-.CenterTopCO {
+.CenterTopSR {
     margin-left: auto;
     margin-right: auto;
-    margin-top: 50px;
+    margin-top: 30px;
     margin-bottom: 10px;
     width: 100%;
-    height: 120px;
+    /* height: 120px; */
     display: flex;
     flex-wrap: wrap;
+    flex-direction: column;
     position: relative;
     /* flex-flow: column; */
 
@@ -27,64 +32,53 @@
     justify-content: center;
     place-items: center;
     /* text-align: center; */
-
-    .ListLine {
-        display: flex;
-        justify-content: right;
-        width: 60%;
-        .MyLabel {
-            width: 50%;
-            text-align: right;
-        }
-        .MyData {
-            width: 50%;
-            text-align: left;
-            margin-left: 5%;
-            margin-right: 5%;
-            .CopyBtn {
-                margin-left: 30px;
-                margin-right: 10px; 
-                margin-top: 0;
-                padding-top: 0;
-
-                border-radius: 1.2rem;
-                border: 2px solid rgb(150, 150, 235);
-                vertical-align: middle;
-                width: 100px;
-                height: 30px;
-                font-size: 1.2rem;
-                font-weight: 700;
-
-                color: rgb(150, 150, 235);
-                background-color: rgb(15, 16, 27);
-
-                &:hover {
-                    background-color: rgb(58, 62, 110);
-                }
-                &:active {
-                    background-color: rgb(78, 57, 196)
-                }
-
-            }
-        }
-    }
-
-    /* p {
-        width: 50%;
-        b {
-            font-size: 2rem;
-        }
-    } */
 }
 
-.CenterMiddleCO {
+.TextCenterSmall {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.TextCenter {
+    margin-bottom: 20px;
+}
+
+.FrameTop {
+    position: relative;
+    display: flex;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+
+    img {
+        position: relative;
+        width: 40%;
+        height: auto;
+        image-rendering: optimizeQuality;
+        object-fit: contain;
+
+        animation: ImgFadeIn 1s ease-in-out forwards;
+    }
+}
+
+@keyframes ImgFadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.CenterMiddleSR {
     width: 100%;
     height: 160px;
     display: flex;
     position: relative;
 }
 
-.RightSideCO, .LeftSideCO {
+.RightSideSR, .LeftSideSR {
     width: 50%;
     margin: 10px;
     display: flex;
@@ -93,7 +87,7 @@
     color: rgb(150, 150, 235);
 }
 
-.CenterBottomCO {
+.CenterBottomSR {
     margin-left: auto;
     margin-right: auto;
     width: 100%;
@@ -113,7 +107,7 @@
 
 /*/// MEDIA ///   /// MEDIA ///   MEDIA ///   /// MEDIA ///   /// MEDIA ///   /// MEDIA ///   /// MEDIA ///   /// MEDIA ///   /// MEDIA ///   /// MEDIA ///   /// MEDIA ///   /// MEDIA ///   */
 @media screen and (max-width: 1900px) {
-    .CenterTopCO {
+    .CenterTopSR {
         font-size: 1.4rem;
         p {
             margin-top: 3px;
@@ -127,13 +121,13 @@
 
 @media screen and (max-width: 376px) {
 
-    .OuterLowerContainerCO {
+    .OuterLowerContainerSR {
         width: 90%;
         top: 60px;
         margin-top: 10px;
     }
 
-    .CenterTopCO {
+    .CenterTopSR {
         font-size: 1.4rem;
         height: 84px;
         margin-top: 5px;
@@ -150,21 +144,21 @@
         flex-flow: column;
     }
 
-    .LeftSideCO {
+    .LeftSideSR {
         font-size: 0.8rem;
         width: 100%;
         margin: 10px 0;
         place-content: center;
     }
 
-    .RightSideCO {
+    .RightSideSR {
         font-size: 0.8rem;
         width: 100%;
         margin: 10px 0;
         place-content: center;
     }
 
-    .CenterBottomCO {
+    .CenterBottomSR {
         top: 0px;
         font-size: 0.8rem;
     }
