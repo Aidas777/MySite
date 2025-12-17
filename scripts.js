@@ -190,7 +190,7 @@ function Controller(ControlName, ActionName) {
         ShowMsg(CopyTxt(ControlName), ColorGreen);
 
     // SHOW TEL
-    } else if (ControlName == 'ShowTelBtn' && ActionName == 'ShowTelNr') {
+    } else if (ControlName.includes('ShowTelBtn') && ActionName == 'ShowTelNr') {
         // ShowMsg(CopyTxt(ControlName), ColorGreen);
         ShowDataInElement(GetTelNr('a3ff7k9eoS6rtyw4z#eqr7ufsiwkS7sa35eyk8weyn2riu7kera@ti5f2c1hr4psje76'), ControlName);
         
@@ -660,13 +660,20 @@ function GetTelNr(TelNr) {
 }   
 
 function ShowDataInElement(DataToShow, ShowInClassElement) {
-    let ShowInElement = document.querySelector('.' + ShowInClassElement);
-    
-    if (ShowInElement.style.width != '220px') {
-        ShowInElement.style.width = '220px';
+
+    let ShowInElement; 
+
+    if (!ShowInClassElement.includes('active')) {
+        
+        ShowInElement = document.querySelector('.' + ShowInClassElement);
+        ShowInElement.classList.toggle('active');
         ShowInElement.innerHTML = DataToShow;
+
     } else {
-        ShowInElement.style.width = '100px';
+        
+        ShowInClassElement = ShowInClassElement.replace('active', '');
+        ShowInElement = document.querySelector('.' + ShowInClassElement);
+        ShowInElement.classList.remove('active');
         ShowInElement.innerHTML = 'Show';
     }
 

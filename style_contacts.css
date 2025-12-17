@@ -22,60 +22,56 @@
     position: relative;
     /* flex-flow: column; */
 
-    font-size: 2rem;
+    font-size: 1.6rem;
     color: rgb(150, 150, 235);
     justify-content: center;
     place-items: center;
     /* text-align: center; */
+}
 
-    .ListLine {
-        display: flex;
-        justify-content: right;
-        align-items: center;
-        width: 60%;
-        margin-top: 5px;
-        margin-bottom: 5px;
-        height: 28px;
-        .MyLabel {
-            width: 50%;
-            text-align: right;
-        }
-        .MyData {
-            width: 50%;
-            text-align: left;
-            margin-left: 5%;
-            margin-right: 5%;
-            .CopyBtn, .ShowTelBtn {
-                /* margin-left: 30px; */
-                margin-right: 10px; 
-                margin-top: 0;
-                padding-top: 0;
+.ListLine {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    width: 60%;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    height: 28px;
+}
+.MyLabel {
+    width: 50%;
+    text-align: right;
+}
 
-                border-radius: 1.2rem;
-                border: 2px solid rgb(150, 150, 235, 0.4);
-                vertical-align: middle;
-                width: 100px;
-                height: 30px;
-                font-size: 1.3rem;
-                font-weight: 200;
+.MyData {
+    width: 50%;
+    text-align: left;
+    margin-left: 5%;
+    margin-right: 5%;
+}
 
-                color: rgb(150, 150, 235);
-                background-color: rgb(32, 34, 58);
-                /* background-color: rgb(15, 16, 27); */
-                /* box-shadow:  0 0 20px inset rgba(150, 150, 235, 0.6); */
+.CopyBtn, .ShowTelBtn {
+    /* margin-left: 30px; */
+    margin-right: 10px; 
+    margin-top: 0;
+    padding-top: 0;
 
-                cursor: pointer;
+    border-radius: 1.2rem;
+    border: 2px solid rgb(150, 150, 235, 0.4);
+    vertical-align: middle;
+    width: 100px;
+    height: 30px;
+    font-size: 1.3rem;
+    font-weight: 200;
 
-                &:hover {
-                    background-color: rgb(58, 62, 110);
-                }
-                &:active {
-                    background-color: rgb(78, 57, 196)
-                }
+    color: rgb(150, 150, 235);
+    background-color: rgb(32, 34, 58);
+    /* background-color: rgb(15, 16, 27); */
+    /* box-shadow:  0 0 20px inset rgba(150, 150, 235, 0.6); */
 
-            }
-        }
-    }
+    cursor: pointer;
+
+}
 
     /* p {
         width: 50%;
@@ -83,23 +79,48 @@
             font-size: 2rem;
         }
     } */
-}
+
 
 .CopyBtn {
     /* width: 100px; */
     margin-left: 30px;
+
+    &:hover {
+        background-color: rgb(58, 62, 110);
+    }
+
+    &:active {
+        background-color: rgb(78, 57, 196)
+    }
 }
  
 .ShowTelBtn {
     /* width: 160px; */
     margin-left: 0;
+    
+    &:hover {
+        background-color: rgb(58, 62, 110);
+    }
+
+    &:active {
+        background-color: rgb(78, 57, 196);
+    }
+
+    &.active {
+        width: 9vw;
+        transition: all 0.1s;
+    }
     /* &:active {
         width: 160px !important;
     } */
-    &:not(:focus) {
+    /* &:not(:focus) {
         width: 100px;
-    }
+    } */
 }
+
+/* .ShowTelBtn:active {
+    width: 10vw;
+} */
 
 .CenterMiddleCO {
     width: 100%;
@@ -152,20 +173,51 @@
 @media screen and (max-width: 376px) {
 
     .OuterLowerContainerCO {
-        width: 90%;
+        width: 96%;
         top: 60px;
         margin-top: 10px;
     }
 
     .CenterTopCO {
-        font-size: 1.4rem;
-        height: 84px;
-        margin-top: 5px;
+        font-size: 1.1rem;
+        height: 28vh;
+        margin-top: 5px;    
         margin-bottom: 0;
         text-align: center;
 
         p > b {
             font-size: 0.9rem;
+        }
+    }
+
+    .ListLine {
+        width: 100%;
+        height: 18px;
+        /* font-size: 1.2rem; */
+    }
+
+    .MyLabel {
+        width: 35%;
+    }
+
+    .MyData {
+        width: 65%;
+    }
+
+    .CopyBtn, .ShowTelBtn {
+        font-size: 1rem;
+        width: 16vw;
+        height: 26px;
+    }
+
+    .CopyBtn {
+        margin-left: 5px;
+
+    }
+
+    .ShowTelBtn {
+        &.active {
+            width: 36vw;
         }
     }
 

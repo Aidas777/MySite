@@ -180,13 +180,13 @@
     }
 
     .CenterTop {
-        font-size: 0.9rem;
+        font-size: 0.8rem;
         height: 84px;
         margin-top: 17px;
         margin-bottom: 0;
 
         p > b {
-            font-size: 1.1rem;
+            font-size: 1.0rem;
         }
     }
 
@@ -198,14 +198,14 @@
     }
 
     .LeftSide {
-        font-size: 0.9rem;
+        font-size: 0.8rem;
         width: 100%;
         margin: 0;
         place-content: center;
     }
 
     .RightSide {
-        font-size: 0.9rem;
+        font-size: 0.8rem;
         width: 100%;
         margin-top: 10px;
         margin-left: 0;
@@ -222,7 +222,7 @@
     .CenterBottom {
         top: 0px;
         margin-top: 23px;
-        font-size: 0.9rem;
+        font-size: 0.8rem;
         text-align: center;
         display: inline-block;
         word-break: break-all;
@@ -258,6 +258,7 @@
 
             color: rgb(15, 16, 27);
             filter: blur(0);
+            text-rendering: optimizeSpeed;
             
         }
         /* 100% {

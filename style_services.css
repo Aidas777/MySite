@@ -53,9 +53,9 @@
 
     img {
         position: relative;
-        width: 40%;
+        width: 40vw;
         height: auto;
-        image-rendering: optimizeQuality;
+        /* image-rendering: optimizeQuality; */
         object-fit: contain;
 
         animation: ImgFadeIn 1s ease-in-out forwards;
@@ -129,7 +129,7 @@
 
     .CenterTopSR {
         font-size: 1.4rem;
-        height: 84px;
+        /* height: 84px; */
         margin-top: 5px;
         margin-bottom: 0;
         text-align: center;
@@ -137,6 +137,19 @@
         p > b {
             font-size: 0.9rem;
         }
+    }
+
+    .TextCenterSmall {
+        font-size: 1rem;
+        margin-bottom: 5px;
+    }
+
+    .FrameTop img {
+        position: relative;
+        width: 60vw;
+        height: auto;
+        /* image-rendering: optimizeQuality; */
+
     }
 
     .CenterMiddle {
