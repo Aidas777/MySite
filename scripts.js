@@ -27,7 +27,7 @@ window.onresize = () => {
 // }
 
 function AnimateLabelCenterTop() {
-// const LabelCenterTop = document.getElementsByClassName('LabelCenterTop')[0];
+
 const LabelCenterTop = document.querySelector('.LabelCenterTop');
             setTimeout(function() {
                 LabelCenterTop.classList.add('hover-simulated');
@@ -41,6 +41,18 @@ const LabelCenterTop = document.querySelector('.LabelCenterTop');
 function LoadPartToPage(WhatToLoad, Parameters) {
         
     let CurrentdMiddleOfPage = WhatToLoad.replace('.html','');
+    const FileNameDecoding = (
+        {
+        'login': 'LoginPage', 'aboutus': 'AboutUsPage',
+        'ourteam' : 'OurTeamPage', 'services' : 'ServicesPage',
+        'contacts' : 'ContactsPage', 'bottom' : 'bottom'
+     }
+     [CurrentdMiddleOfPage]) ?? 'Unknown';
+
+    CurrentdMiddleOfPage = FileNameDecoding;
+
+    // console.log(CurrentdMiddleOfPage + ' ||| ' + FileNameDecoding);
+
 
     fetch(WhatToLoad)
         .then(response => response.text())
@@ -95,9 +107,9 @@ function LoadPartToPage(WhatToLoad, Parameters) {
             // }
             ////////////////////////////////
 
-            if (CurrentdMiddleOfPage.includes('aboutus')) {
+            if (CurrentdMiddleOfPage.includes('AboutUs')) {
                 // if (window.innerWidth >= 376) {
-                    AnimateBlinkWaveAllLetters('.CenterBottom');
+                    AnimateBlinkWaveAllLetters('.CenterBottomAU');
                 // } else {
                     // AnimateBlinkOneLetter('.CenterBottom');
                     // AnimateBlinkWaveAllLetters('.CenterBottom');
@@ -240,15 +252,16 @@ function AnimateBlinkWaveAllLetters(OnElement) {
     const ElementForAnimation = document.querySelector(OnElement);
     if (!ElementForAnimation) return;
 
-    const ElementForAnimationText = ElementForAnimation.innerHTML.trim();
-    ElementForAnimation.innerHTML = '';
+    const ElementForAnimationText = ElementForAnimation.textContent.trim();
+    ElementForAnimation.textContent = '';
 
     for (let index = 0; index < ElementForAnimationText.length; index++) {
         const Span = document.createElement('span');
-
-        Span.innerHTML = (ElementForAnimationText[index] == ' ' ? '\u00A0' : ElementForAnimationText[index]);
+        
+        Span.textContent = (ElementForAnimationText[index] == ' ' ? '\u00A0' : ElementForAnimationText[index]);
         Span.style.animationDelay = (index * 0.03) + 's';
         ElementForAnimation.appendChild(Span);
+        
     }
 }
 
@@ -348,10 +361,6 @@ function GenerateStars(StarsQty) {
         || (RandX > (PasswInputObject.offsetLeft + PasswInputObject.offsetWidth))
         || (RandY > (PasswInputObject.offsetTop + PasswInputObject.offsetHeight + InputFieldsBoxObject.offsetTop))) 
         )
-        {
-            LoginOuterBoxObject.appendChild(StarPoints);
-        }
-
         {
             LoginOuterBoxObject.appendChild(StarPoints);
         }
@@ -469,7 +478,10 @@ function SwitchLanguageLetters(ControlName) {
 // LANGUAGE CHANGE BY CURRENT LANGUAGE
 function ChangeLanguageByCurrent() {
 
-    let MiddleOfPage = 'LoginPage';
+    let CurentMiddleOfPage = document.querySelector('.MiddleOfPage').className;
+    MiddleOfPage = CurentMiddleOfPage.replace('MiddleOfPage ', '');
+    // alert(CurentMiddleOfPage);
+    // let MiddleOfPage = 'LoginPage';
     
     let ObjectForLanguageChange;
     const AdditionalDivForGlowEffect = "<div class='glow'>";

@@ -13,7 +13,7 @@
 .CenterTopCO {
     margin-left: auto;
     margin-right: auto;
-    margin-top: 50px;
+    margin-top: 10vh;
     margin-bottom: 10px;
     width: 100%;
     height: 180px;
@@ -73,14 +73,6 @@
 
 }
 
-    /* p {
-        width: 50%;
-        b {
-            font-size: 2rem;
-        }
-    } */
-
-
 .CopyBtn {
     /* width: 100px; */
     margin-left: 30px;
@@ -107,7 +99,7 @@
     }
 
     &.active {
-        width: 9vw;
+        width: 50%;
         transition: all 0.1s;
     }
     /* &:active {
@@ -124,7 +116,8 @@
 
 .CenterMiddleCO {
     width: 100%;
-    height: 160px;
+    height: 50px;
+    margin-top: 40px;
     display: flex;
     position: relative;
 }

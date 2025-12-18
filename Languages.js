@@ -53,6 +53,12 @@ const LanguagesFullArray =
                 {
                     "LeftSide" : "Amiedra LT is AboutUsPage"
                 }
+            ,
+
+            "Texts" :
+                {
+                    "CenterTop" : "AAA"
+                }
             }
         }
     ,

@@ -76,7 +76,7 @@
     padding-left: 20px;
 }
 
-.CenterBottom {
+.CenterBottomAU {
     margin-left: auto;
     margin-right: auto;
     width: 90%;
@@ -101,6 +101,7 @@
         animation-duration: 5s;
         animation-direction: alternate-reverse;
         animation-iteration-count: infinite;
+        /* animation-timing-function: steps(30); */
     }
 
     .bright {
@@ -172,6 +173,10 @@
 
 @media screen and (max-width: 376px) {
 
+    .MiddleOfPage.AboutUsPage {
+        margin-top: 50px;
+    }
+
     .OuterLowerContainer {
         width: 90%;
         height: 275px;
@@ -219,7 +224,7 @@
         text-align: left;
     }
 
-    .CenterBottom {
+    .CenterBottomAU {
         top: 0px;
         margin-top: 23px;
         font-size: 0.8rem;
@@ -257,7 +262,7 @@
         50% {
 
             color: rgb(15, 16, 27);
-            filter: blur(0);
+            filter: none;
             text-rendering: optimizeSpeed;
             
         }
