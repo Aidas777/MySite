@@ -105,10 +105,14 @@ function LoadPartToPage(WhatToLoad, Parameters) {
 
             if (CurrentdMiddleOfPage.includes('AboutUs')) {
                 // if (window.innerWidth >= 376) {
-                    AnimateBlinkWaveAllLetters('.CenterBottomAU');
+                    // AnimateBlinkWaveAllLetters('.CenterBottomAU');
+                    AnimateBlinkWords('.CenterBottomAU');
+                    
                 // } else {
                     // AnimateBlinkOneLetter('.CenterBottom');
                     // AnimateBlinkWaveAllLetters('.CenterBottom');
+                    // AnimateBlinkWords('.CenterBottomAU');
+                    
                 // }
             }
 
@@ -244,7 +248,7 @@ function GetPageTitle(WhatToLoad) {
     return 'Amiedra - ' + WhatToLoad;
 }
 
-
+// ANIMATE BLINK ALL LETTERS (NOT USED FOR NOW. USED FOR WORDS ANIMATION INSTEAD TO SAVE CPU LOAD)
 function AnimateBlinkWaveAllLetters(OnElement) {
 
     const ElementForAnimation = document.querySelector(OnElement);
@@ -261,6 +265,37 @@ function AnimateBlinkWaveAllLetters(OnElement) {
         ElementForAnimation.appendChild(Span);
         
     }
+}
+
+// ANIMATE BLINK WORDS
+function AnimateBlinkWords(OnElement) {
+
+    const ElementForAnimation = document.querySelector(OnElement);
+    if (!ElementForAnimation) return;
+
+    let WindowWidth = window.innerWidth;
+
+    let ElementForAnimationText = ElementForAnimation.textContent.trim();
+    ElementForAnimationText = ElementForAnimationText.split(' ');
+    ElementForAnimation.textContent = '';
+
+    for (let index = 0; index < ElementForAnimationText.length; index++) {
+        const Span = document.createElement('span');
+        
+        Span.textContent = (ElementForAnimationText[index] + '\u00A0');
+
+        // if (WindowWidth >= 376) {
+            // Span.style.animationDelay = (index * 0.2) + 's';
+        // } else {
+            Span.style.animationDelay = (index * 0.1) + 's';
+        // }
+
+        ElementForAnimation.appendChild(Span);
+        
+    }
+    
+
+
 }
 
 
