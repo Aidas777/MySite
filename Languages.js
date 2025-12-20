@@ -49,15 +49,19 @@ const LanguagesFullArray =
         ,
 
         "AboutUsPage" :
-            {"Titles" : 
+            {
+                "Titles" : 
                 {
-                    "LeftSide" : "Amiedra LT is AboutUsPage"
+                    "RightSide" : "Amiedra LT is AboutUsPage"
                 }
             ,
 
             "Texts" :
                 {
-                    "CenterTop" : "AAA"
+                    "CenterTop" : "<p>Mano programavimo kelionė prasidėjo su <b>Microsoft Access</b>. <b>Aštuonerių metų</b> eigoje " +
+                    "kūriau baigtines aplikacijas ir pagalbinius įrankius įvairioms įmonėms. 2021 m. studijavau <b>Baltijos technologijos institute</b> " +
+                    "ir įgijau <b>žiniatinklio programuotojo „Full Stack“ diplomą su pagyrimu</b>. Apie ketverius metus dirbau programuotoju " +
+                    "UAB „DS Smith Packaging Lithuania“. Vienos iš pagrindinių technologijų ir įrankių, su kuriais dirbau per visą savo karjerą, yra šie:</p>"
                 }
             }
         ,

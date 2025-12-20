@@ -265,7 +265,7 @@ function AnimateBlinkWaveAllLetters(OnElement) {
     }
 }
 
-// ANIMATE BLINK WORDS
+// ANIMATE BLINK WORDS (CURRENTY IN USE)
 function AnimateBlinkWords(OnElement) {
 
     const ElementForAnimation = document.querySelector(OnElement);
@@ -543,24 +543,41 @@ function ChangeLanguageByCurrent() {
     ElementsPropertyToChange = 'PlaceHolders';
     TitlesArrayByCurrentLanguage = GetTranslationsArrayByCurrentLanguage()[MiddleOfPage][ElementsPropertyToChange];
 
-    for (const [key, value] of Object.entries(TitlesArrayByCurrentLanguage)) {
+    
+    if (TitlesArrayByCurrentLanguage) {
+        for (const [key, value] of Object.entries(TitlesArrayByCurrentLanguage)) {
 
-        ObjectForLanguageChange = document.getElementsByClassName(key)[0];
-        ObjectForLanguageChange.placeholder = value;
-        
+            ObjectForLanguageChange = document.getElementsByClassName(key)[0];
+            ObjectForLanguageChange.placeholder = value;
+            
+        }
     }
         
     // TRANLSATING (SWITCHNG) FONTS
     ElementsPropertyToChange = 'Fonts';
     TitlesArrayByCurrentLanguage = GetTranslationsArrayByCurrentLanguage()[MiddleOfPage][ElementsPropertyToChange];
 
+    if (TitlesArrayByCurrentLanguage) {
+        for (const [key, value] of Object.entries(TitlesArrayByCurrentLanguage)) {
+
+            ObjectForLanguageChange = document.getElementsByClassName(key)[0];
+            // ObjectForLanguageChange = document.querySelector(key)[0];
+            ObjectForLanguageChange.style.fontFamily = value;
+
+        }
+    }
+
+    // TRANLSATING TEXTS
+    ElementsPropertyToChange = 'Texts';
+    TitlesArrayByCurrentLanguage = GetTranslationsArrayByCurrentLanguage()[MiddleOfPage][ElementsPropertyToChange];
+
     for (const [key, value] of Object.entries(TitlesArrayByCurrentLanguage)) {
 
         ObjectForLanguageChange = document.getElementsByClassName(key)[0];
-        // ObjectForLanguageChange = document.querySelector(key)[0];
-        ObjectForLanguageChange.style.fontFamily = value;
-
+        ObjectForLanguageChange.innerHTML = value;
+        
     }
+
 
     // TRANSLATING DemoLabelBottom
     ElementsPropertyToChange = 'DemoLabelBottom';
