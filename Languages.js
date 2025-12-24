@@ -50,18 +50,24 @@ const LanguagesFullArray =
 
         "AboutUsPage" :
             {
-            //     "Titles" : 
-            //     {
-            //         "RightSide" : "Amiedra LT is AboutUsPage"
-            //     }
-            // ,
+            "Titles" : 
+                {
+                    "LabelCenterTop" : "Sveiki, aš vardu Aidas",
+                    "CenterBottomAU" : "Šią svetainę sukūriau rankiniu būdu, kad pasimėgauti programavimu ir idėjų įgyvendinimu, bei patobulinti savo programavimo įgūdžius."
+                }
+            ,
 
             "Texts" :
                 {
                     "CenterTop" : "<p>Mano programavimo kelionė prasidėjo su <b>Microsoft Access</b>. <b>Aštuonerius metus</b> " +
                     "kūriau baigtines aplikacijas ir pagalbinius įrankius įvairioms įmonėms. 2021 m. studijavau <b>Baltijos Technologijos Institute</b> " +
                     "ir įgijau <b>žiniatinklio programuotojo „Full Stack“ diplomą su pagyrimu</b>. Apie ketverius metus dirbau programuotoju " +
-                    "UAB „DS Smith Packaging Lithuania“. Vienos iš pagrindinių technologijų ir įrankių, su kuriais dirbau per visą savo karjerą, yra šie:</p>"
+                    "UAB „DS Smith Packaging Lithuania“. Vienos iš pagrindinių technologijų ir įrankių, su kuriais dirbau per visą savo karjerą, yra šie:</p>",
+
+                    "RightSideAU" : "Mėgstu kurti efektyvius ir praktiškus sprendimus, bei nuolat mokytis naujų technologijų, kad pagerinčiau savo darbą.",
+
+                    "LeftSideRight" : "5 Linux ir kita." // IF VALUE STARTS WITH A NUMBER, THEN NUMBER MEANS NTH ELEMENT NUMBER ON HTML. NUMBER IS NOT DISPAYED.
+
                 }
             }
         ,

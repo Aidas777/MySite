@@ -50,7 +50,7 @@
     margin-top: 30px;
 }
 
-.RightSide, .LeftSide {
+.RightSideAU, .LeftSide {
     display: flex;
     color: rgb(150, 150, 235);
     
@@ -63,7 +63,7 @@
     place-content: space-evenly;
 }
 
-.RightSide {
+.RightSideAU {
     /* margin-right: 10px; */
     margin-left: 20px;
     width: 30%; 
@@ -242,7 +242,7 @@
         place-content: center;
     }
 
-    .RightSide {
+    .RightSideAU {
         font-size: 0.8rem;
         width: 100%;
         margin-top: 10px;

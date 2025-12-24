@@ -154,22 +154,22 @@
 
     }
 
-    .CenterMiddle {
-        height: 100px;
+    .CenterMiddleSR {
+        height: 10vh;
         flex-flow: column;
     }
 
     .LeftSideSR {
         font-size: 0.8rem;
         width: 100%;
-        margin: 10px 0;
+        margin: 5px 0;
         place-content: center;
     }
 
     .RightSideSR {
         font-size: 0.8rem;
         width: 100%;
-        margin: 10px 0;
+        margin: 5px 0;
         place-content: center;
     }
 

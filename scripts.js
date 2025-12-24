@@ -1,11 +1,51 @@
 // REFRESH PAGE
+// window.onresize = () => {
+//     let MiddleOfPage = document.querySelector('.MiddleOfPage');
+
+//     if (screen.width > 412 && MiddleOfPage.className == 'MiddleOfPage login') {
+//         location.reload();
+//         CheckLang();
+//     }
+// }
+
+// window.onload = (CheckLang) => {
+//     if (window.innerWidth <376) {
+//         const LanguagesDiv = document.querySelector('.Languages');
+//         const NavigationBar = document.querySelector('.NavigationBar');
+//         NavigationBar.append(LanguagesDiv);
+//     }
+// }
+
+
 window.onresize = () => {
     let MiddleOfPage = document.querySelector('.MiddleOfPage');
 
     if (screen.width > 412 && MiddleOfPage.className == 'MiddleOfPage login') {
         location.reload();
     }
+    AdjustLanguageLetters();
+    // if (window.innerWidth <376) {
+    //     const LanguagesDiv = document.querySelector('.Languages');
+    //     const NavigationBar = document.querySelector('.NavigationBar');
+
+    //     if (LanguagesDiv && NavigationBar) {
+    //         NavigationBar.append(LanguagesDiv);
+    //     }
+    // }
 }
+
+window.onload = AdjustLanguageLetters;
+// window.onload = () => {
+
+function AdjustLanguageLetters() {
+    if (window.innerWidth <376) {
+        const LanguagesDiv = document.querySelector('.Languages');
+        const NavigationBar = document.querySelector('.NavigationBar');
+        if (LanguagesDiv && NavigationBar) {
+            NavigationBar.append(LanguagesDiv);
+        }
+    }
+}    
 
 
 /// CONTROLLER /// /// CONTROLLER ////// CONTROLLER ////// CONTROLLER ////// CONTROLLER ////// CONTROLLER ////// CONTROLLER ////// CONTROLLER ////// CONTROLLER ////// CONTROLLER ////// CONTROLLER ///
@@ -221,6 +261,7 @@ function LoadPartToPage(WhatToLoad, Parameters) {
 
 
 function GetPageTitle(WhatToLoad) {
+
     if (WhatToLoad.includes('aboutus')) {
         WhatToLoad = 'About Us';
     } else if (WhatToLoad.includes('ourteam')) {
@@ -321,6 +362,16 @@ function AnimateBlinkOneLetter(OnElement) {
 
     }, 10);
 
+}
+
+
+function AnimateElementsAfterPageOrLangChange() {
+    let ElementForAnimation = '.CenterBottomAU'; // ABOUT ME (US) PAGE
+    let ElementForAnimationByClass = document.querySelector(ElementForAnimation);
+    
+    if (ElementForAnimationByClass) {
+        AnimateBlinkWords(ElementForAnimation);
+    }
 }
 
 
@@ -537,7 +588,7 @@ function GetCurrentMiddleOfPage() {
 function ChangeLanguageByCurrent() {
 
     // let MiddleOfPage = 'LoginPage';
-    let MiddleOfPage = GetCurrentMiddleOfPage();
+    // let MiddleOfPage = GetCurrentMiddleOfPage();
     let ObjectForLanguageChange;
 
     // TRANLSATING NAVBAR
@@ -560,6 +611,7 @@ function ChangeLanguageByCurrent() {
 
     // ANIMATE CENTER TOP LABEL
     AnimateLabelCenterTop();
+    AnimateElementsAfterPageOrLangChange();
     
 }
 
@@ -666,7 +718,12 @@ function TranslateTexts() {
         for (const [key, value] of Object.entries(TitlesArrayByCurrentLanguage)) {
 
             ObjectForLanguageChange = document.getElementsByClassName(key)[0];
-            ObjectForLanguageChange.innerHTML = value;
+
+            if (!isNaN(value.charAt(0))) { // IF VALUE IN LANGUAGES STARTS WITH A NUMBER, THEN NUMBER MEANS NTH ELEMENT NUMBER ON HTML
+                ObjectForLanguageChange.children[value.charAt(0)].innerHTML = value.substring(2);
+            } else {
+                ObjectForLanguageChange.innerHTML = value;
+            }
             
         }
     }

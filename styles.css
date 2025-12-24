@@ -490,6 +490,7 @@ body {
 
     .NavigationBarArea.active {
         border-radius: 10px;
+        height: 235px;
 
         animation: LinksBoxAmination;
         animation-duration: 0.7s;
@@ -605,7 +606,8 @@ body {
     } */
 
     .Languages {
-        width: 15%;
+        width: 20%;
+        margin-left: 10px;
     }
 
     .DemoLabelBottom {
