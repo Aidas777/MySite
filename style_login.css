@@ -1,7 +1,7 @@
 /* html {
     font-size: 12px;
     font-family: Arial, Helvetica, sans-serif;
-}
+} */
 
 body {
     height: 91vh;
@@ -10,7 +10,7 @@ body {
     display: flex;
     flex-wrap: wrap;
     background-color: rgb(15, 16, 27);
-} */
+}
 
 .MiddleOfPage {
     display: flex;
@@ -696,8 +696,8 @@ body {
     }
 
     .LoginOuterBox {
-        max-height: 37%;
-        top:15%;
+        max-height: 35%;
+        top:12%;
         clip-path: ellipse(70% 50%);
     }
 

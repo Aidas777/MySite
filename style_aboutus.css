@@ -14,8 +14,8 @@
     position: absolute;
     right: 30%;
     top: 4%;
-    /* border: 3px solid rgba(94, 94, 165, 0.3); */
-    border: 3px solid rgba(94, 94, 165, 0.6);
+    /* border: 3px solid rgba(94, 94, 165, 0.6); */
+    border: 3px solid rgb(94, 94, 148);
     border-radius: 50%;
     /* background-image: url("202512Me.png"); */
     /* background-blend-mode: soft-light; */
