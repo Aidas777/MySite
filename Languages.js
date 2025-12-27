@@ -114,7 +114,6 @@ const LanguagesFullArray =
                     "3 CenterTopCO" : "<span class='MyLabel'>Tel. Nr. :</span><span class='MyData'><button class='ShowTelBtn' " +
                     "title='Show phone number' onclick='Controller(this.className, `ShowTelNr`)'>Rodyti</button></span>"
                 }
-                
             }
         ,
 
@@ -258,7 +257,12 @@ const LanguagesFullArray =
             {
                 "Titles" : 
                 {
-                    "LabelCenterTop" : "Мои\u2000контакты"
+                    "LabelCenterTop" : "Мои\u2000контакты",
+                    "0 CenterTopCO" : "<span class='MyLabel'>Имя :</span><span class='MyData'>Aidas</span>",
+                    "2 CenterTopCO" : "<span class='MyLabel'>Местоположение :</span><span class='MyData'>Klaipėda, Lietuva</span>",
+
+                    "3 CenterTopCO" : "<span class='MyLabel'>Номер телефона :</span><span class='MyData'><button class='ShowTelBtn' " +
+                    "title='Show phone number' onclick='Controller(this.className, `ShowTelNr`)'>Показать</button></span>"
                 }
             }
         ,
@@ -397,7 +401,12 @@ const LanguagesFullArray =
             {
                 "Titles" : 
                 {
-                    "LabelCenterTop" : "My contacts"
+                    "LabelCenterTop" : "My contacts",
+                    "0 CenterTopCO" : "<span class='MyLabel'>Name :</span><span class='MyData'>Aidas</span>",
+                    "2 CenterTopCO" : "<span class='MyLabel'>Location :</span><span class='MyData'>Klaipėda, Lietuva</span>",
+
+                    "3 CenterTopCO" : "<span class='MyLabel'>Phone number :</span><span class='MyData'><button class='ShowTelBtn' " +
+                    "title='Show phone number' onclick='Controller(this.className, `ShowTelNr`)'>Show</button></span>"
                 }
             }
         ,

@@ -25,6 +25,7 @@
     /* background-size: cover;
     background-repeat: no-repeat; */
     z-index: 9;
+    overflow: hidden;
 
     img {
         width: 100%;
