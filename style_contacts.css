@@ -263,8 +263,8 @@
     }
 
     .CopyBtn {
-        margin-left: 15px;
-        margin-right: auto;
+        margin-left: auto;
+        margin-right: 0;
 
     }
 
@@ -324,5 +324,4 @@
     .LabelsBottomRightBox {
         top: 470px;
     }
-
 }
