@@ -55,6 +55,7 @@ function Controller(ControlName, ActionName) {
         // ShowMsg(GetTranslationsArrayByCurrentLanguage()['MsgTexts']['AlreadyOnLoginPage'], ColorRed);
         LoadPartToPage('contacts.html');
         ChangeNavBarElementColorWhenClicked(ControlName);
+        alert('W: ' + window.innerWidth + ' /// H: ' + window.innerHeight );
         
     } else if (ControlName == 'ServicesControl' && ActionName == 'OpenPage') {
         // ShowMsg(GetTranslationsArrayByCurrentLanguage()['MsgTexts']['AlreadyOnLoginPage'], ColorRed);
@@ -959,4 +960,5 @@ const ColorGreen = {
 const ColorRed = {
     FontColor : 'rgb(235, 150, 231)',
     BackColor : 'rgba(250, 134, 196, 0.2)'
+
 }
