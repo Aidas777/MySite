@@ -40,7 +40,7 @@
     display: flex;
     justify-content: right;
     align-items: center;
-    width: 60%;
+    width: 55%;
     margin-top: 10px;
     margin-bottom: 10px;
     height: 28px;
@@ -57,14 +57,16 @@
 }
 
 .MyData {
+    display: flex;
     width: 60%;
     text-align: left;
+    align-items: center;
     margin-left: 5%;
-    margin-right: 5%;
+    margin-right: 10%;
 }
 
 .CopyBtn, .ShowTelBtn {
-    /* margin-left: 30px; */
+    /* margin-left: 30px; */    
     margin-right: 10px; 
     margin-top: 0;
     padding-top: 0;
@@ -88,7 +90,8 @@
 
 .CopyBtn {
     /* width: 100px; */
-    margin-left: 30px;
+    margin-left: auto;
+    margin-right: 0;
 
     &:hover {
         background-color: rgb(58, 62, 110);
@@ -250,7 +253,8 @@
 
     .MyData {
         width: 76%;
-        margin-left: 0;
+        margin-left: auto;
+        margin-right: auto;
         display: flex;
         flex-flow: row;
         place-items: center;
