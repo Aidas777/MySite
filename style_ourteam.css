@@ -6,58 +6,98 @@ body {
      margin-top: 50px;
 }
 
-/* .raindrop {
+.Ball {
     position: absolute;
-    top: -10px;
-    width: 2px;
-    height: 10px;
-    background-color: rgb(150, 150, 235);
-    overflow: hidden;
-    animation: fall linear infinite;
+    display: flex;
+
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: transparent;
+    filter: blur(5px);
+    align-self: center;
+
+    animation-name: BallMove;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+
+    &:nth-child(1) {
+        animation-delay: 0s;
+        animation-name: BallMove;
+        animation-duration: 10s;
+    }
+
+    &:nth-child(2) {
+        animation-delay: 1.5;
+        animation-name: BallMove;
+        animation-duration: 5s;
+    }
+
+    &:nth-child(3) {
+        animation-delay: 3s;
+        animation-name: BallMove;
+        animation-duration: 7s;
+    }
+
 }
 
-@keyframes fall {
+@keyframes BallMove {
     0% {
-        transform: translateY(-10px);
-    }
+       transform: rotate(0deg) translateX(100px) rotate(0deg);
+       background-color: rgb(150, 150, 235, 0.5);
+    }   
+
+    /* 50% {
+        filter: blur(1px);
+    } */
 
     100% {
-        transform: translateY(100vh);
-        overflow: hidden;
-
+        transform: rotate(360deg) translateX(100px) rotate(-360deg);
+        background-color: transparent;
+        filter: blur(0px);
+        width: 50px;
+        height: 50px;
     }
+    
+}
+/* 
+.InBall {
+    width: 10px;
+    height: 10px;
+    right: 0;
+    margin-left: auto;
+    border-radius: 50%;
+    background-color: transparent;
+    position: relative;
+    place-self: center;
+
+    filter: blur(7px);
+
+    animation-name: InBallMove;
+    animation-duration: 10s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
 }
 
-.raindrop:nth-child(odd) {
-    animation-duration: 1.8s;
-    left: 10%;
-    animation-delay: 0s;
-}
+.Ball .InBall:nth-child(1) {
+        background-color: rgba(128, 255, 212, 0.9);
+    }
 
-.raindrop:nth-child(even) {
-    animation-duration: 3s;
-    left: 30%;
-    animation-delay: 0.2s;
-}
+.Ball .InBall:nth-child(2) {
+        background-color: rgba(225, 128, 255, 0.9);
+    }
 
-.raindrop:nth-child(3) {
-    animation-duration: 1s;
-    left: 50%;
-    animation-delay: 0.4s;
-}
 
-.raindrop:nth-child(4) {
-    animation-duration: 2s;
-    left: 70%;
-    animation-delay: 0.6s;
-}
-
-.raindrop:nth-child(5) {
-    animation-duration: 0.9s;
-    left: 90%;
-    animation-delay: 0.8s;
+@keyframes InBallMove {
+    100% {
+        width: 20px;
+        height: 20px;
+        right: 50%;
+        background-color: transparent;
+    }
+    
 } */
-
 
 .OuterLowerContainerOT {
     display: flex;
@@ -156,7 +196,7 @@ body {
     position: absolute;
     box-shadow: inset -50px -10px 0 rgba(150, 150, 235, 0.3) , inset -60px -10px 0 rgba(94, 94, 165, 0.3);
     border-radius: 50%;
-    top: -3%;
+    top: -62%;
     z-index: -1;
 }
 
@@ -193,6 +233,19 @@ body {
             }
         }
     }
+
+    .CenterBottomOT::after {
+    content: '';
+    border-radius: 50%;
+    /* height: 30px; */ 
+    width: 80%;
+    height: 80px;
+    position: absolute;
+    box-shadow: inset -50px -10px 0 rgba(150, 150, 235, 0.3) , inset -60px -10px 0 rgba(94, 94, 165, 0.3);
+    border-radius: 50%;
+    top: -3%;
+    z-index: -1;
+}
 }
 
 @media screen and (max-width: 376px) {

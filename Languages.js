@@ -251,7 +251,7 @@ const LanguagesFullArray =
             {
                 "Titles" : 
                 {
-                    "LabelCenterTop" : "Мои\u2000контакты",
+                    "LabelCenterTop" : "Mои\u2000контакты",
                     // "0 CenterTopCO" : "<span class='MyLabel'>Имя :</span><span class='MyData'>Aidas</span>",
                     // "2 CenterTopCO" : "<span class='MyLabel'>Локация :</span><span class='MyData'>Klaipėda, Lietuva</span>",
 
