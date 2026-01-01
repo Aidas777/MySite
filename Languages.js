@@ -74,7 +74,7 @@ const LanguagesFullArray =
 
         "OurTeamPage" :
             {
-                "Titles" : 
+            "Titles" : 
                 {
                     "LabelCenterTop" : "Mūsų komanda"
                 }
@@ -96,9 +96,20 @@ const LanguagesFullArray =
 
         "ServicesPage" : //Programos / My Apps
             {
-                "Titles" : 
+            "Titles" : 
                 {
                     "LabelCenterTop" : "Mano Programos"
+                }
+                ,
+            "Texts" :
+                {
+                "ItemTextCenterMiddle" : "<b><i>Aimer</i></b> – tai įrankis skirtas daugiausia įmonėms, gabenančioms keleivius ir siuntinius " +
+                "mikroautobusais tarptautiniais maršrutais. Ši programa - tai pagalba tiek asmenims planuojantiems reisus, tiek vairuotojams, " +
+                "o reiškia ir klientams. Ji skirta greičiau, paprasčiau ir efektyviau sudarinėti maršrutus, išvengti reiso planavimo klaidų. " +
+                "Ji apima ir tokias užduotis kaip informacijos valdymas ir pasidalinimas, pinigų apskaita, ataskaitų kūrimas, asmeniniai priminimai, " +
+                "kitos svarbios užduotys. Varginantys adresų suvedinėjimai į žemėlapių svetaines, regionų paieška jose, " +
+                "duomenų “perrašinėjimai iš lapų į lapus“ ar pan., įtampa siekiant nepamiršti svarbios informacijos, " +
+                "“galų suvedinėjimai“ prieš ar po reiso taps praeitimi."
                 }
             }
         ,
@@ -242,7 +253,7 @@ const LanguagesFullArray =
             {
                 "Titles" : 
                 {
-                    "LabelCenterTop" : "Мои программы"
+                    "LabelCenterTop" : "Mои программы"
                 }
             }
         ,

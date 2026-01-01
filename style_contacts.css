@@ -310,7 +310,7 @@
     .CenterBottomCO::after {
     content: '';
     border-radius: 50%;
-    height: 25px;
+    height: 21px;
     width: 100%;
     position: absolute;
     box-shadow: inset -15px -3px 0 rgba(150, 150, 235, 0.3) , inset -25px -5px 0 rgba(94, 94, 165, 0.3);

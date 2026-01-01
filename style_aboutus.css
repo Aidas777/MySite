@@ -495,7 +495,7 @@
     
     .AboutUsPage .MyFoto {
         width: 14%;
-        top: 4%;
+        top: 25px;
         right: 10%;
         border: 2px solid rgb(94, 94, 148);
     }
@@ -549,7 +549,7 @@
 
     .CenterBottomAU {
         top: 0px;
-        margin-top: 23px;
+        margin-top: 25px;
         font-size: 0.79rem;
         text-align: center;
         display: inline-block;

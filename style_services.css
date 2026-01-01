@@ -46,6 +46,8 @@
 
 .ItemTextCenterMiddle {
     margin-bottom: 20px;
+    text-indent: 4rem;
+    text-align: justify;
 }
 
 .ItemPicFrame {
@@ -112,12 +114,27 @@
     text-align: center;
 }
 
+.DemoLabelBottom {
+    display: none;
+}
 
 
 
 
 /*/// MEDIA ///   /// MEDIA ///   MEDIA ///   /// MEDIA ///   /// MEDIA ///   /// MEDIA ///   /// MEDIA ///   /// MEDIA ///   /// MEDIA ///   /// MEDIA ///   /// MEDIA ///   /// MEDIA ///   */
 @media screen and (max-width: 1900px) {
+
+    html, body {
+        height: 100%;
+    }
+        
+    body {
+        min-height: 100vh;
+        overflow: visible;
+        background-attachment: fixed;
+        
+    }
+
     .CenterTopSR {
         font-size: 1.4rem;
         p {
@@ -187,10 +204,10 @@
         font-size: 0.8rem;
     }
 
-    .DemoLabelBottom {
+    /* .DemoLabelBottom {
         top: 390px;
         font-size: 0.7rem;
-    }
+    } */
 
     .LabelsBottomRightBox {
         top: 465px;
