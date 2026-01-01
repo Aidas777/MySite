@@ -100,16 +100,31 @@ const LanguagesFullArray =
                 {
                     "LabelCenterTop" : "Mano Programos"
                 }
-                ,
+            ,
             "Texts" :
                 {
-                "ItemTextCenterMiddle" : "<b><i>Aimer</i></b> – tai įrankis skirtas daugiausia įmonėms, gabenančioms keleivius ir siuntinius " +
-                "mikroautobusais tarptautiniais maršrutais. Ši programa - tai pagalba tiek asmenims planuojantiems reisus, tiek vairuotojams, " +
-                "o reiškia ir klientams. Ji skirta greičiau, paprasčiau ir efektyviau sudarinėti maršrutus, išvengti reiso planavimo klaidų. " +
-                "Ji apima ir tokias užduotis kaip informacijos valdymas ir pasidalinimas, pinigų apskaita, ataskaitų kūrimas, asmeniniai priminimai, " +
-                "kitos svarbios užduotys. Varginantys adresų suvedinėjimai į žemėlapių svetaines, regionų paieška jose, " +
-                "duomenų “perrašinėjimai iš lapų į lapus“ ar pan., įtampa siekiant nepamiršti svarbios informacijos, " +
-                "“galų suvedinėjimai“ prieš ar po reiso taps praeitimi."
+                "ItemTextCenterMiddle" : 
+                //     "<b><i>Aimer</i></b> – tai įrankis skirtas daugiausia įmonėms, gabenančioms keleivius ir siuntinius " +
+                // "mikroautobusais tarptautiniais maršrutais. Ši programa - tai pagalba tiek asmenims planuojantiems reisus, tiek vairuotojams, " +
+                // "o reiškia ir klientams. Ji skirta greitai, paprastai ir efektyviai sudarinėti maršrutus, išvengti reiso planavimo klaidų. " +
+                // "Ji apima ir tokias užduotis kaip informacijos valdymas ir pasidalinimas, pinigų apskaita, ataskaitų kūrimas, asmeniniai priminimai, " +
+                // "kitos svarbios užduotys.<br>" +
+
+                // "Rankinį adresų vedimą, regionų paieškas bei popierinį duomenų tvarkymą keičia išmanūs sprendimai " +
+                // "– visa reikalinga informacija kartu su atvaizdavimu žemėlapiuose dabar pasiekiama akimirksniu, vieno mygtuko paspaudimu. " +
+                // "Pamirškite nerimą siekiant nepamiršti svarbios informacijos. Adresų valdymas ir maršrutų derinimas tampa sklandžia ir lengva kasdienybės dalimi."
+                
+                // "Varginantys adresų suvedinėjimai į žemėlapių svetaines, regionų paieška jose, " +
+                // "duomenų “perrašinėjimai iš lapų į lapus“ ar pan., įtampa siekiant nepamiršti svarbios informacijos, " +
+                // "“galų suvedinėjimai“ prieš ar po reiso taps praeitimi."
+
+                "<b><i>Aimer</i></b> – tai išmanus įrankis tarptautinių pervežimų verslui, optimizuojantis keleivių ir siuntų gabenimo procesus. " +
+                "Sistema sukurta siekiant palengvinti darbą vadybininkams ir vairuotojams, užtikrinant aukščiausią paslaugų kokybę jūsų klientams.<br><br>" +
+                "Programa leidžia greitai ir be klaidų planuoti maršrutus, valdyti informaciją, vesti pinigų apskaitą bei generuoti ataskaitas. " +
+                "Rankinį adresų vedimą, regionų paieškas bei popierinį duomenų tvarkymą keičia automatizuoti sprendimai – " +
+                "visa aktuali informacija ir vizualizacija žemėlapiuose pasiekiama vienu mygtuko paspaudimu.<br><br>" +
+                "Atsikratykite nuolatinės įtampos dėl informacijos srauto. Su Aimer adresų valdymas ir maršrutų derinimas tampa sklandžia, "+
+                "paprasta ir užtikrinta jūsų kasdienybės dalimi."
                 }
             }
         ,
@@ -398,9 +413,22 @@ const LanguagesFullArray =
         "ServicesPage" : //Programos / My Apps
             {
                 "Titles" : 
-                {
-                    "LabelCenterTop" : "My Applications"
-                }
+                    {
+                        "LabelCenterTop" : "My Applications"
+                    }
+                ,
+                "Texts" :
+                    {
+                        "ItemTextCenterMiddle" : 
+                        "<b><i>Aimer</i></b> is a smart tool for international transportation businesses that optimizes " +
+                        "passenger and parcel transportation processes. The system is designed to make work easier for managers and drivers, " +
+                        "ensuring the highest quality of service for your customers.<br><br>" +
+                        "The program allows you to quickly and without errors plan routes, manage information, keep financial records and generate reports. " +
+                        "Manual address entry, region searches and paper data management are replaced by automated solutions - all relevant information and "+
+                        "visualization on maps are available with one click.<br><br>" +
+                        "Get rid of the constant stress due to the flow of information. With Aimer, address management and route coordination become a smooth, " +
+                        "simple and secure part of your everyday life."
+                    }
             }
         ,
 

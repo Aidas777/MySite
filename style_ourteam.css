@@ -295,7 +295,7 @@ body {
     .CenterBottomOT::after {
         top: 30%;
         box-shadow: inset -20px -10px 0 rgba(150, 150, 235, 0.3) , inset -30px -10px 0 rgba(94, 94, 165, 0.3);
-        height: 50px;   
+        height: 48px;   
     }
 
     .LabelsBottomLeftBox {
@@ -305,6 +305,12 @@ body {
 }
 
 @media screen and (max-width: 660px) {
+
+    .CenterBottomOT::after {
+        height: 45px;
+        top: 32%;
+    }
+
     .LabelsBottomLeftBox {
         right: 0;
     }

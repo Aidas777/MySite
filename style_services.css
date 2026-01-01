@@ -1,5 +1,5 @@
 .MiddleOfPage.ServicesPage {
-    margin-top: 35px;
+    margin-top: 10px;
 }
 
 .OuterLowerContainerSR {
@@ -17,7 +17,7 @@
 .CenterTopSR {
     margin-left: auto;
     margin-right: auto;
-    margin-top: 30px;
+    margin-top: 20px;
     margin-bottom: 10px;
     width: 100%;
     /* height: 120px; */
@@ -27,7 +27,7 @@
     position: relative;
     /* flex-flow: column; */
 
-    font-size: 2rem;
+    font-size: 1.4rem;
     color: rgb(150, 150, 235);
     justify-content: center;
     place-items: center;
@@ -38,10 +38,21 @@
     position: relative;
 }
 
+.ItemDetails_1 {
+    display: flex;
+    flex-flow: column;
+}
+
 .ItemTextCenterUpper {
-    font-size: 1.2rem;
+    font-size: 1.8rem;
+    font-weight: 700;
+    font-style: italic;
     margin-bottom: 10px;
     text-align: center;
+    border-bottom: 2px solid rgb(150, 150, 235);
+    width: 30%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .ItemTextCenterMiddle {
@@ -149,6 +160,10 @@
 
 @media screen and (max-width: 376px) {
 
+    .MiddleOfPage.ServicesPage {
+        margin-top: 50px;
+    }
+
     .OuterLowerContainerSR {
         width: 90%;
         top: 60px;
@@ -156,7 +171,7 @@
     }
 
     .CenterTopSR {
-        font-size: 1.4rem;
+        font-size: 1.2rem;
         /* height: 84px; */
         margin-top: 5px;
         margin-bottom: 0;
@@ -169,12 +184,16 @@
 
     .ItemTextCenterUpper {
         font-size: 1rem;
-        margin-bottom: 5px;
+        margin-bottom: 15px;
+    }
+
+    .ItemTextCenterMiddle {
+        font-size: 0.9rem;
     }
 
     .ItemPicFrame img {
         position: relative;
-        width: 60vw;
+        width: 80vw;
         height: auto;
         /* image-rendering: optimizeQuality; */
 
