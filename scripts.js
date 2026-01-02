@@ -131,25 +131,33 @@ function Controller(ControlName, ActionName) {
         }
     }
 
+    // SHOW HIDE BOTTOM ON SCROLL FOR Services PAGE
     const LabelsBottomRightBoxObject = document.querySelector('.LabelsBottomRightBox');
     const LabelsBottomLeftBoxObject = document.querySelector('.LabelsBottomLeftBox');
-    if (ControlName == 'ServicesControl') {
+    // const MiddleOfPageObject = document.querySelector('.MiddleOfPage');
+
+    // console.log(MiddleOfPageObject ? MiddleOfPageObject.className : 'Nera kolkas');
+    
+
+    // if ((ControlName.includes('Services') && ControlName.includes('Control')) || (MiddleOfPageObject ? MiddleOfPageObject.className == 'MiddleOfPage ServicesPage' : null)) {
+    if ((ControlName.includes('Services') && ControlName.includes('Control'))) {
 
         LabelsBottomRightBoxObject.style.display = 'none';
         LabelsBottomLeftBoxObject.style.display = 'none';
 
         window.addEventListener('scroll', ShowHideBottomPage);
-
-    } else {
-
-        if (LabelsBottomRightBoxObject != undefined && LabelsBottomLeftBoxObject != undefined)  {
+        
+    } else if (!ControlName.includes('Services') && ControlName.includes('Control')) {
+        
+        if (LabelsBottomRightBoxObject && LabelsBottomLeftBoxObject)  {
+            
             LabelsBottomRightBoxObject.style.display = 'flex';
             LabelsBottomLeftBoxObject.style.display = 'flex';
         }
 
         window.removeEventListener('scroll', ShowHideBottomPage);
     }
-    // alert(ControlName);
+    
 }
 
 
@@ -166,7 +174,7 @@ function ShowHideBottomPage() {
     const totalPageHeight = document.documentElement.scrollHeight;
 
     // Check if the sum of visible height + scroll distance reaches the total height
-    if (windowHeight + scrolledFromTop >= totalPageHeight - 1) {
+    if (windowHeight + scrolledFromTop >= totalPageHeight - 10) {
 
         LabelsBottomRightBoxObject.style.display = 'flex';
         LabelsBottomLeftBoxObject.style.display = 'flex';

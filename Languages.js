@@ -118,7 +118,7 @@ const LanguagesFullArray =
                 // "duomenų “perrašinėjimai iš lapų į lapus“ ar pan., įtampa siekiant nepamiršti svarbios informacijos, " +
                 // "“galų suvedinėjimai“ prieš ar po reiso taps praeitimi."
 
-                "<b><i>Aimer</i></b> – tai išmanus įrankis tarptautinių pervežimų verslui, optimizuojantis keleivių ir siuntų gabenimo procesus. " +
+                "<b><i>Aimer</i></b> – tai įrankis, skirtas tarptautinių pervežimų verslui, optimizuojantis keleivių ir siuntų gabenimo procesus. " +
                 "Sistema sukurta siekiant palengvinti darbą vadybininkams ir vairuotojams, užtikrinant aukščiausią paslaugų kokybę jūsų klientams.<br><br>" +
                 "Programa leidžia greitai ir be klaidų planuoti maršrutus, valdyti informaciją, vesti pinigų apskaitą bei generuoti ataskaitas. " +
                 "Rankinį adresų vedimą, regionų paieškas bei popierinį duomenų tvarkymą keičia automatizuoti sprendimai – " +
@@ -274,7 +274,7 @@ const LanguagesFullArray =
             "Texts" :
                 {
                     "ItemTextCenterMiddle" : 
-                    "<b><i>Aimer</i></b> — это удобный инструмент для международных транспортных компаний, оптимизирующий процессы пассажирских " +
+                    "<b><i>Aimer</i></b> — это инструмент для международных транспортных компаний, оптимизирующий процессы пассажирских " +
                     "и посылочных перевозок. Система разработана для облегчения работы менеджеров и водителей, обеспечивая лучшее качество обслуживания ваших клиентов.<br><br>" +
                     "Программа позволяет быстро и безошибочно планировать маршруты, управлять информацией, вести финансовый учет и генерировать отчеты. " +
                     "Ручной ввод адресов, поиск регионов и управление бумажными данными заменяются автоматизированными решениями — вся необходимая информация и визуализация " +
@@ -432,7 +432,7 @@ const LanguagesFullArray =
             "Texts" :
                 {
                     "ItemTextCenterMiddle" : 
-                    "<b><i>Aimer</i></b> is a smart tool for international transportation businesses that optimizes " +
+                    "<b><i>Aimer</i></b> is a tool for international transportation businesses that optimizes " +
                     "passenger and parcel transportation processes. The system is designed to make work easier for managers and drivers, " +
                     "ensuring the highest quality of service for your customers.<br><br>" +
                     "The program allows you to quickly and without errors plan routes, manage information, keep financial records and generate reports. " +
